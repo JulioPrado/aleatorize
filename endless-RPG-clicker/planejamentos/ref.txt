@@ -1,0 +1,64 @@
+Número do acordo: 206586426 SANTANDER negociação
+
+
+Inicio{
+escolhe Nome
+escolhe Classe
+}
+
+Nome = nome
+Ouro = ouro
+Classe = dá bonus em determinadas armas e atributos
+Nivel = soma de todos os atributos/10(rounded up)
+
+Agilidade = Ataques adicionais e esquiva de ataques
+agilidade * 0,3 = %
+25= 7,5%
+50= 15%
+75= 22,5%
+100= 30%
+
+Inteligencia = chance de causar efeitos extras com os ataques usando itens mágicos
+inteligencia * 0,4 = %
+25= 10%
+50= 20%
+75= 30%
+100= 40%
+
+Dano =  dano causado
+25= 1,25 * arma.dano + adicionalAtaqueGeral
+50= 1,50 * arma.dano + adicionalAtaqueGeral
+100= 2 * arma.dano + adicionalAtaqueGeral
+
+Defesa = dano mitigado
+25= 1,25 * (armadura.bonus + elmo.bonus + escudo.bonus + bota.bonus)
+50= 1,5 * (armadura.bonus + elmo.bonus + escudo.bonus + bota.bonus)
+75= 1,75 * (armadura.bonus + elmo.bonus + escudo.bonus + bota.bonus)
+100= 2 * (armadura.bonus + elmo.bonus + escudo.bonus + bota.bonus)
+
+Vitalidade = quantidade máxima de vida
+PV = pontos de vida
+
+Estado = (paralisado, sangrar, incendiar, envenenar)
+TipoDeDano = 
+  espada: chance  de sangrar
+  machado: chance de sangrar
+  clava: chance de paralisar
+  dist: Dá um ataque a mais no início do combate
+  magic: ignora 20% da defesa do alvo
+tipoInimigo:
+	Celestial, besta, etc...
+
+
+
+Inimigos tem que ter:
+	Nome
+	Tipo
+	nivel
+	chanceAtaqEsq
+	danoEfetivo
+	defesaEfetiva 1.01 * (armadura+elmo+escudo+bota)
+	chanceEfeito
+	pv
+	estado
+

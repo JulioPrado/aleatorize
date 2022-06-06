@@ -1,0 +1,144 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+@charset "UTF-8";
+
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	background-color: white;
+	background-image: url('../imagens/l2.png');
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.mm{
+	border: 1px solid red;
+}
+
+.mm2{
+	border: 1px solid blue;
+}
+
+div#conteudo{
+	padding: 20px;
+	padding-bottom: 70px;
+	background-color: white;
+}
+
+div#apoieBox{
+	margin: 0 auto;
+	color: black;
+	background: hsla(50, 57%, 47%, 1);
+	background: linear-gradient(90deg, hsla(50, 57%, 47%, 1) 0%, hsla(56, 83%, 82%, 1) 100%);
+	background: -moz-linear-gradient(90deg, hsla(50, 57%, 47%, 1) 0%, hsla(56, 83%, 82%, 1) 100%);
+	background: -webkit-linear-gradient(90deg, hsla(50, 57%, 47%, 1) 0%, hsla(56, 83%, 82%, 1) 100%);
+}
+
+
+footer{
+	width: 100%;
+	text-align: center;
+	background-color: lightgray;
+	padding: 10px;
+	bottom: 0;
+}
+
+footer a{
+	color: #ba2a29;
+}
+
+footer a:hover{
+	color: gray;
+	text-decoration: none;
+}
+
+/* Navegação **************************************************/
+
+div#menu{
+	text-align: center;
+	background-color: white;
+}
+
+.menu-link {
+	padding: 20px 0;
+	border-top-right-radius: 1em;
+	border-top-left-radius: 1em;
+	background-color: white;
+	cursor:pointer;
+	border: 1px solid black;
+}
+
+.menu-passivo{
+	border-bottom: 1px solid black;
+	color: gray;
+	background-color: lightgray;
+}
+
+.menu-ativo{
+	color: black;
+	border: 1px solid black;
+	border-bottom: none;
+}
+
+
+
+/* Tipografia *************************************************/
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+
+/* Imagens *************************************************/
+
+
+/* Cards ****************************************************/
+
+.card{
+	display: block;
+	margin: 10px auto;
+}
+
+.gerador-img{
+	width: 200px;
+	height: 200px;
+	display: block;
+	margin: 0 auto;
+}
+
+
+
+/* Media Queries *************************************************/
+
+
+@media (max-width: 575.98px) {
+	
+	.menu-link {
+	font-size: .8em;
+	}
+
+	.so-desktop{
+		display: none;
+	}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+}

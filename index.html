@@ -1,0 +1,206 @@
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8"/>
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<title>Aleatorize</title>
+<link rel="stylesheet" href="css/oraculo.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6 d-flex align-items-center justify-content-center">
+			<h1>Oráculo</h1>
+		</div>
+		<div class="col-md-6">
+				<img class="img-fluid" src="imagens/logo.png">
+		</div>
+		
+	</div>
+
+	<div class="row boxPrincipal pt-5">
+		<div id="botoes" class="col-sm-6">
+
+			<span>1º Selecione o tipo de cenário:</span>
+			<select onchange="tipoOraculo(value);" class="form-control">
+		 		<option value="geral" active>Geral</option>
+		 		<option value="fantasia">Fantasia Medieval</option>
+		 		<option value="moderno" >Mundo Moderno</option>
+		 		<option value ="supers" >Super heróis</option>
+		 		<option value="cyberpunk" disabled>Cyberpunk</option>
+		 		<option value="pokemon" disabled>Pokemon</option>
+			</select>
+			<br/>
+			<span>2º Inicie a sessão:</span>
+			<button class="btn btn-sm btn-danger" onclick="sessaoInicio();scrollParaLog()">
+				Limpar e Iniciar nova sessão
+			</button><br/>
+			<br/>
+				3º Faça as perguntas que quiser para o desenvolvimento da sua história:
+				<br/>
+				<br/>
+				Sim e não:
+				<div class="divFlex">
+					<button class="btn btn-sm btn-success" onclick="simeNao('Muito fácil');scrollParaLog()">
+					Muito fácil
+					</button>
+					<button class="btn btn-sm btn-success" onclick="simeNao('Provável');scrollParaLog()">
+					Provável
+					</button>
+					<button class="btn btn-sm btn-success" onclick="simeNao('50/50');scrollParaLog()">
+					50/50
+					</button>
+					<button class="btn btn-sm btn-success" onclick="simeNao('Improvável');scrollParaLog()">
+					Improvável
+					</button>
+					<button class="btn btn-sm btn-success" onclick="simeNao('Muito difícil');scrollParaLog()">
+					Muito difícil
+					</button>
+				</div>
+				<br/>
+				Oráculos gerais:
+				<br/>
+				<div class="divFlex">
+					<button class="btn btn-sm btn-info" onclick="acao();scrollParaLog()">
+					Ação
+					</button>
+					<button class="btn btn-sm btn-info" onclick="tema();scrollParaLog()">
+					Tema
+					</button>
+					<button class="btn btn-sm btn-info" onclick="objeto();scrollParaLog()">
+					Objeto
+					</button>
+					<button class="btn btn-sm btn-info" onclick="comodo();scrollParaLog()">
+					Cômodo
+					</button>
+					<button class="btn btn-sm btn-info" onclick="lugarUrbano();scrollParaLog()">
+					Lugar urbano
+					</button>
+					<button class="btn btn-sm btn-info" onclick="lugarNatureza();scrollParaLog()">
+					Lugar natureza
+					</button>
+					<button class="btn btn-sm btn-info" onclick="complicacao();scrollParaLog()">
+					Complicação
+					</button>
+					<button class="btn btn-sm btn-info" onclick="reviravolta();scrollParaLog()">
+					Reviravolta
+					</button>
+					<button class="btn btn-sm btn-info" onclick="gancho();scrollParaLog()">
+					Gancho
+					</button>
+					<button class="btn btn-sm btn-info" onclick="vegetacao();scrollParaLog()">
+					Vegetação
+					</button>
+				</div>
+				<br/>
+				Oráculos Personagens:
+				<br/>
+				<div class="divFlex">
+					<button class="btn btn-sm btn-info" onclick="pessoa();scrollParaLog()">
+					Alguém
+					</button>
+					<button class="btn btn-sm btn-info" onclick="nomeAtual();scrollParaLog()">
+					Nome atual
+					</button>
+					<button class="btn btn-sm btn-info" onclick="nomeFantasia();scrollParaLog()">
+					Nome fantasia
+					</button>
+					<button class="btn btn-sm btn-info" onclick="relacionamento();scrollParaLog()">
+					Relação
+					</button>
+					<button class="btn btn-sm btn-info" onclick="desejosObjetivos();scrollParaLog()">
+					Desejos e Objetivos
+					</button>
+					<button class="btn btn-sm btn-info" onclick="posturaPDM();scrollParaLog()">
+					Postura
+					</button>
+					<button class="btn btn-sm btn-info" onclick="acaoCombate();scrollParaLog()">
+					Ação de combate
+					</button>
+					<button class="btn btn-sm btn-info" onclick="ferimento();scrollParaLog()">
+					Ferimento
+					</button>
+				</div>	
+		</div>
+
+		<div id="log" class="col-sm-6">
+			<div id="divBotoesImprime" class="text-right">
+				<a class="btn btn-sm btn-block btn-danger" onclick="finalizaImprime1();">
+				Finalizar e imprimir
+				</a>
+			</div>
+			<div class="input-group" style="margin: 0!important;">
+			  <input id="campo" type="text" class="form-control" placeholder="Digite algo para incluir no histórico">
+			  <div class="input-group-append">
+			    <button class="btn btn-dark" type="button" onclick="adicionarCampo();">Incluir</button>
+			  </div>
+			</div>	
+			
+			<div id="inclusoes">
+			  	
+			</div>
+			
+		</div>
+
+		
+			
+	</div>
+
+	<div id="divImprimir">
+			
+
+	</div>
+</div> <!-- fim container -->
+
+<div class="container-fluid px-5 boxPrincipal">
+	<hr>
+	<div class="row">
+			<h3>Geradores Aleatórios</h3>
+		<p class="mt-5">
+			Existem diversas formas de se abstrair PDMs definindo valores padrões de rolagens, porém alguns Mestres preferem ter a ficha completa de alguns personagens para ter mais profundidade neles. O tempo que se gasta produzindo as fichas uma a uma poderia ser usado pelo narrador para continuar desenvolvendo a trama para o RPG, por exemplo, ou mesmo para fazer outras atividades que a vida adulta exige.
+
+			Seja você um narrador ou um jogador de RPG solo, com certeza você já passou por algo parecido. Então, aqui você encontrará geradores de fichas aleatórias para te auxiliar a poupar tempo e a focar no que realmente importa: a diversão.
+		</p>
+
+		<h4>Nossos Geradores:</h4>
+	</div>	
+	<div class="row">
+		<div class="col-sm-4">
+			<a href="geradordeherois/" target="_blank">
+				<div class="card">
+			 		<img class="gerador-img" src="imagens/mem3.png">
+				</div>
+			</a>
+		</div>
+		<div class="col-sm-4">
+			<a href="geradorterradevastada/" target="_blank">
+				<div class="card">
+		 			<img class="gerador-img" src="imagens/terradevastada.png">
+				</div>
+			</a>
+		</div>
+		<div class="col-sm-4">
+
+		</div>
+	</div>
+</div>
+<footer>
+		<span>
+			Desenvolvido por <a href="https://www.julioprado.github.io" target="_blank"> Julio Prado</a>.
+		</span>
+</footer>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script  src="js/oraculo.js"></script>
+</body>
+</html>

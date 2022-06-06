@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+
+/*define as cores combinando com as classes de botões*/
+:root{
+--cor-Vida: #dc3545;
+--cor-Defesa: #28a745;
+--cor-Ataque: #fd7e14;
+--cor-Dano: #007bff;
+--cor-NivelEstagioDado: #6610f2;
+}
+
+
+
+html,body	{
+	margin: 0px;
+	padding: 0px;
+}
+
+body div{
+	text-align: center;
+}
+
+div#dicas{
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 10px;
+	margin: 15px;
+}
+
+div#logBatalha{
+	border: 1px solid lightgray;
+	width: 80%;
+	height: 250px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	margin: 20px auto;
+}
+
+div#divInimigos{
+	border: 1px solid lightgray;
+	width: 80%;
+	height: 250px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	margin: 20px auto;
+}
+
+div#barraTopo{
+	background-color: white;
+	box-shadow: 2px 2px 5px black;
+	padding: 10px;
+}
+
+.btn-light{
+	color: green;
+}
+.btn-light:hover{
+	color: green;
+}
+
+.marcador{
+	border: 1px solid red; 
+}
+
+div#conquistas{
+	padding: 15px;
+}
+
+
+
+#rodape{
+	margin-top: 15px;
+	padding: 10px;
+	background-color: black;
+	color: white;
+}
+
+#rodape a{
+	color: #dc3545;
+}
+
+/* TIPOGRAFIA -----------------------------------------*/
+
+a:hover{
+	text-decoration: none;
+}
+
+div#barraTopo{
+	font-size: 1.2em;
+}
+
+.turno{
+	display: block;
+	padding: 5px;
+	border: 1px dotted lightgray;
+
+}
+
+
+
+/* Media Queries
+---------------------------------------------------------------------------*/
+
+/* Extra small devices (<576px) */
+@media (max-width: 575.98px) {
+
+	div#logBatalha{
+		font-size: 0.8em;
+	}
+
+
+}
+	
+
+/* Small devices (>576px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+
+}
+
+/* Medium devices (>768px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+	
+	
+}
+/* Large devices (>992px) */
+@media (min-width: 992px) {
+	
+}

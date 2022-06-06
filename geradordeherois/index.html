@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gerador De Heróis</title>
+	<link rel="stylesheet" href="estilo.css">
+	<!--     BOOTSTRAP              -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<script
+  	src="https://code.jquery.com/jquery-3.5.1.min.js"
+  	integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  	crossorigin="anonymous"></script>
+  	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script  src="js.js"></script>
+</head>
+<body>
+	<div id="tela">
+		<div id="telaInicial">
+			<h1 class="text-center">
+				Gerador aleatório de Heróis para 
+				</h1>
+				<a href="https://jamboeditora.com.br/produto/mutantes-malfeitores/" target="_blank">
+				<img src="logo.png" width="300" style="display:block;margin: 0 auto;">
+				</a>
+			<hr>
+			<div id="botaoGerar">
+				<input onchange="atualizaNP()" type="range" id="nivelPoder" name="nivelPoder" min="1" max="20" style="width:80%;display: block; margin: 0 auto">
+				<br>
+				<span style="display:block; text-align: center;">
+					NP:
+					<span id="NumeroNP">
+						11
+					</span>
+				</span>
+				<br>
+				<button style="display: block; margin: 0 auto;" type="button" class="btn btn-danger" onclick="gerarHeroi();">
+					Gerar herói
+				</button>
+			</div>
+			<div id="botaoImprimir" style="display: none;">
+				<button type="button" class="btn btn-danger" onclick="tentarNovamente()">
+						Tentar novamente
+				</button>
+			</div>
+			<div>
+				<p>
+					Pontos para distribuir: 
+					<span id="pontosDistribuir">
+					</span>
+					<br><span>(pdms podem exceder esse limite)</span>
+				</p>
+				<h5>LIMITES</h5>
+				<span>
+					Ataque + Efeito: 
+					<span class="DobroNP">
+					</span>
+					<br>
+					<span>
+						(se efeito não precisar de ataque, limite=NP).
+					</span>
+				</span>
+				<br>
+				<span>
+					Esquiva/Aparar + Resistência:
+					<span class="DobroNP">
+					</span>
+				</span>
+				<br>
+				<span>
+					Fortitude + Vontade: 
+					<span class="DobroNP">
+					</span>
+				</span>
+				<br>
+				<span>
+				Habilidade + Perícia + Vantagem: 
+					<span id="limitePericia">
+					</span>
+				</span>
+			</div>
+		</div>
+		<div id="ficha" style="display: none;" class="borda">
+			<img src="logo.png" width="200" style="display:block; opacity: 0.5;">
+			
+			<div id="nomeHeroi">
+				<form method="get">
+					<input type="text" id="inputNome" placeholder="Nome do herói">
+					<button onclick="imprimirFicha()" type="button" class="btn btn-info">
+					Finalizar e imprimir
+					</button>
+				</form>
+			</div>
+
+			 
+			<h3 class="right">
+				NP: 
+				<span id="fichaNp">
+					0
+				</span>
+			</h3>
+			
+				<!-- 
+				Conceito: 
+				<span id="fichaConceito">
+					
+				</span>
+				-->
+			<!--
+			<p>
+				Gênero: 
+				<span id="fichaGenero">
+					M/F
+				</span>
+
+				Idade: 
+				<span id="fichaIdade">
+					
+				</span>
+
+				Altura: 
+				<span id="fichaAltura">
+					
+				</span>
+			</p>
+			-->
+			<p>
+				Força:
+				<span id="fichaForca"></span>
+				Agilidade:
+				<span id="fichaAgilidade"></span>
+				Luta:
+				<span id="fichaLuta"></span>
+				Prontidão:
+				<span id="fichaProntidao"></span>
+			</p>
+			<p>
+				Vigor:
+				<span id="fichaVigor"></span>
+				Destreza:
+				<span id="fichaDestreza"></span>
+				Intelecto:
+				<span id="fichaIntelecto"></span>
+				Presença:
+				<span id="fichaPresenca"></span>
+			</p>
+			<div class="right borda">
+				<h5>Defesas</h5>
+				<p>
+					Esquiva(Agi): 
+					<span id="fichaEsquiva">
+					</span>
+					<br>
+					Aparar(Lut): 
+					<span id="fichaAparar">
+					</span>
+					<br>
+					Fortitude(Vig):
+					<span id="fichaFortitude">
+					</span>
+					<br>
+					Vontade(Pro): 
+					<span id="fichaVontade">
+					</span>
+					<br>
+					Resistência(Vig):
+					<span id="fichaResistencia">
+					</span>
+				</p>
+			</div>
+			<div class="borda">
+				<p><h5>Ataques</h5>
+					(Descritores:
+					<span id="fichaDescritor">
+						
+					</span>)</p>
+				<p>
+					
+				</p>
+				<p>
+					Combate CaC: 
+					<span id="cacGrad">
+							
+					</span>
+					<br>
+					<span id="cacPoderes">
+					</span>
+				</p>
+				<p>
+					Combate a distancia:
+					<span id="distGrad">
+							
+					</span>
+					
+					<br>
+					<span id="distPoderes">
+					</span>
+				</p>
+			</div>
+			<div>
+					<h5>Poderes & dispositivos</h5>
+					<span id="fichaPoderes">
+						
+					</span>
+			</div>
+			<div>
+				<h5>Perícias</h5>
+				<span id="fichaPericias"></span>
+			</div>
+			<div>
+				<h5>Vantagens</h5>
+				<span id="fichaVantagens"></span>
+			</div>
+
+		</div> <!-- fim ficha -->
+	</div>
+	<footer>
+		<span id="editoraRodape">
+			<a href="https://jamboeditora.com.br/produto/mutantes-malfeitores/" target="_blank">M&M</a> pertence à © 2022 <a href="https://jamboeditora.com.br" target="_blank">Jambô Editora</a>.
+		</span>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+</body>
+</html>
