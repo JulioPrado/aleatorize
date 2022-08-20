@@ -99,7 +99,6 @@ function gerarHeroi(){
 			campo.innerHTML= valor;
 	 	}
 
-	 	preencherCampo('fichaDescritor',heroi.descritores[0]+' e '+heroi.descritores[1]);
 	 	preencherCampo('fichaNp',heroi.np);
 	 	preencherCampo('cacGrad',heroi.pericias[0].grad)/* perícias [0] sempre é a cac */ 
 	 	preencherCampo('distGrad',heroi.pericias[1].grad)/* perícias [1] sempre é a cac */
@@ -112,22 +111,22 @@ function gerarHeroi(){
 	 	}
 
 	 	for (var i = 0; i<heroi.poderes.length; i++) {
-	 		document.getElementById('fichaPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad);
-	 		if (heroi.poderes[i].alcance=='Perto'){
+	 		$ ('#fichaPoderes').append('('+heroi.poderes[i].descritor+') <b>'+heroi.poderes[i].nome+'</b> '+heroi.poderes[i].grad+' (<small>'+heroi.poderes[i].descricao+'</small>)');
+	 		/*if (heroi.poderes[i].alcance=='Perto'){
 	 			document.getElementById('cacPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad+' ');
 	 		} else if(heroi.poderes[i].alcance=='À Distância'){
 	 			document.getElementById('distPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad+' ');
-	 		}
+	 		}*/
 	 		if (i<heroi.poderes.length-1) {
-	 			document.getElementById('fichaPoderes').append(', ');
-	 		}else {document.getElementById('fichaPoderes').append('.');}
+	 			$ ('#fichaPoderes').append(',<br>');
+	 		}else {$ ('#fichaPoderes').append('.');}
 	 	}
 
 	 	for (var i = 0; i<heroi.vantagens.length; i++) {
-	 		document.getElementById('fichaVantagens').append(heroi.vantagens[i].nome+' ('+heroi.vantagens[i].descricao+')');
+	 		$ ('#fichaVantagens').append(heroi.vantagens[i].nome/*+': <small>'+heroi.vantagens[i].descricao+'</small>'*/);
 	 		if (i<heroi.vantagens.length-1) {
-	 			document.getElementById('fichaVantagens').append(', ');
-	 		}else {document.getElementById('fichaVantagens').append('.');}
+	 			 $ ('#fichaVantagens').append(', ');
+	 		}else {$ ('#fichaVantagens').append('.');}
 	 	}
 
 	 	document.getElementById('fichaForca').innerHTML=heroi.for;
@@ -186,502 +185,50 @@ function gerarHeroi(){
 
 /*------------------------------------------ poderes */
 	listaPoderes.push(
-		{
-		'grad': 0,
-		'nome':'Absorção de Energia',
-		'tipo':'Geral',
-		'acao':'Padrão',
-		'alcance':'Perto',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Afliçao',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'Perto',
-		'duracao':'Instantâneo',
-		'resistencia':'Fortitude ou Vontade'
-		},
-		{
-		'grad': 0,
-		'nome':'Alongamento',
-		'tipo':'Geral',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Ambiente',
-		'tipo':'Controle',
-		'acao':'Padrão',
-		'alcance':'Graduação',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Armadilha',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'À Distância',
-		'duracao':'Instantâneo',
-		'resistencia':'Esquiva'
-		},
-		{
-		'grad': 0,
-		'nome':'Aura de Energia',
-		'tipo':'Ataque',
-		'acao':'Reação',
-		'alcance':'Perto',
-		'duracao':'Instantâneo',
-		'resistencia':'Resistência'
-		},
-		{
-		'grad': 0,
-		'nome':'Campo de Força',
-		'tipo':'Defesa',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Camuflagem',
-		'tipo':'Sensorial',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Compreender',
-		'tipo':'Sensorial',
-		'acao':'Nenhuma',
-		'alcance':'Pessoal',
-		'duracao':'Permanente',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Comunicação',
-		'tipo':'Sensorial',
-		'acao':'Livre',
-		'alcance':'Graduação',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Controle de Elemento',
-		'tipo':'Controle',
-		'acao':'Padrão',
-		'alcance':'Percepção',
-		'duracao':'Sustentado',
-		'resistencia':'Força'
-		},
-		{
-		'grad': 0,
-		'nome':'Controle de Energia',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'À Distância',
-		'duracao':'Instantâneo',
-		'resistencia':'Resistência'
-		},
-		{
-		'grad': 0,
-		'nome':'Controle Mental',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'Percepção',
-		'duracao':'Instantâneo',
-		'resistencia':'Vontade'
-		},
-		{
-		'grad': 0,
-		'nome':'Crescimento',
-		'tipo':'Geral',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Criar',
-		'tipo':'Controle',
-		'acao':'Padrão',
-		'alcance':'À Distância',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Cura',
-		'tipo':'Geral',
-		'acao':'Padrão',
-		'alcance':'Perto',
-		'duracao':'Instantâneo',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Dano',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'Perto',
-		'duracao':'Instantâneo',
-		'resistencia':'Resistência'
-		},
-		{
-		'grad': 0,
-		'nome':'Deflexão',
-		'tipo':'Defesa',
-		'acao':'Padrão',
-		'alcance':'À Distância',
-		'duracao':'Instantâneo',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Duplicação',
-		'tipo':'Controle',
-		'acao':'Padrão',
-		'alcance':'Perto',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Encolhimento',
-		'tipo':'Geral',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Enfraquecer',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'Perto',
-		'duracao':'Instantâneo',
-		'resistencia':'Fortitude ou Vontade'
-		},
-		{
-		'grad': 0,
-		'nome':'Escavação',
-		'tipo':'Movimento',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Golpe',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'Perto',
-		'duracao':'Instantâneo',
-		'resistencia':'Resistência'
-		},
-		{
-		'grad': 0,
-		'nome':'Ilusão',
-		'tipo':'Controle',
-		'acao':'Padrão',
-		'alcance':'Percepção',
-		'duracao':'Sustentado',
-		'resistencia':'Prontidão'
-		},
-		{
-		'grad': 0,
-		'nome':'Imortalidade',
-		'tipo':'Defesa',
-		'acao':'Nenhuma',
-		'alcance':'Pessoal',
-		'duracao':'Permanente',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Imunidade',
-		'tipo':'Defesa',
-		'acao':'Nenhuma',
-		'alcance':'Pessoal',
-		'duracao':'Permanente',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Intangibilidade',
-		'tipo':'Geral',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Invisibilidade',
-		'tipo':'Sensorial',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Invocar',
-		'tipo':'Controle',
-		'acao':'Padrão',
-		'alcance':'Perto',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Leitura Mental',
-		'tipo':'Sensorial',
-		'acao':'Padrão',
-		'alcance':'Percepção',
-		'duracao':'Sustentado',
-		'resistencia':'Vontade'
-		},
-		{
-		'grad': 0,
-		'nome':'Magia',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'À Distância',
-		'duracao':'Instantâneo',
-		'resistencia':'Resistência'
-		},
-		{
-		'grad': 0,
-		'nome':'Membros Extras',
-		'tipo':'Geral',
-		'acao':'Nenhuma',
-		'alcance':'Pessoal',
-		'duracao':'Permanente',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Morfar',
-		'tipo':'Geral',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Mover Objeto',
-		'tipo':'Controle',
-		'acao':'Padrão',
-		'alcance':'À Distância',
-		'duracao':'Sustentado',
-		'resistencia':'Força'
-		},
-		{
-		'grad': 0,
-		'nome':'Movimento',
-		'tipo':'Movimento',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Natação',
-		'tipo':'Movimento',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Nulificar',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'À Distância',
-		'duracao':'Instantâneo',
-		'resistencia':'Graduação/Vontade'
-		},
-		{
-		'grad': 0,
-		'nome':'Pasmar',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'À Distância',
-		'duracao':'Instantâneo',
-		'resistencia':'Fortitude ou Vontade'
-		},
-		{
-		'grad': 0,
-		'nome':'Poder de Carga',
-		'tipo':'Geral',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Proteção',
-		'tipo':'Defesa',
-		'acao':'Nenhuma',
-		'alcance':'Pessoal',
-		'duracao':'Permanente',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Raio',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'À Distância',
-		'duracao':'Instantâneo',
-		'resistencia':'Resistência'
-		},
-		{
-		'grad': 0,
-		'nome':'Rajada Mental',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'Percepção',
-		'duracao':'Instantâneo',
-		'resistencia':'Vontade'
-		},
-		{
-		'grad': 0,
-		'nome':'Rapidez',
-		'tipo':'Geral',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Regeneração',
-		'tipo':'Defesa',
-		'acao':'Nenhuma',
-		'alcance':'Pessoal',
-		'duracao':'Permanente',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Salto',
-		'tipo':'Movimento',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Instantâneo',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Sentidos',
-		'tipo':'Sensorial',
-		'acao':'Nenhuma',
-		'alcance':'Pessoal',
-		'duracao':'Permanente',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Sentido Remoto',
-		'tipo':'Sensorial',
-		'acao':'Livre',
-		'alcance':'Graduação',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Sono',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'À Distância',
-		'duracao':'Instantâneo',
-		'resistencia':'Fortitude'
-		},
-		{
-		'grad': 0,
-		'nome':'Sufocamento',
-		'tipo':'Ataque',
-		'acao':'Padrão',
-		'alcance':'À Distância',
-		'duracao':'Instantâneo',
-		'resistencia':'Fortitude'
-		},
-		{
-		'grad': 0,
-		'nome':'Supervelocidade',
-		'tipo':'Veja Descrição',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Veja descrição',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Teleporte',
-		'tipo':'Movimento',
-		'acao':'Movimento',
-		'alcance':'Graduação',
-		'duracao':'Instantâneo',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Transformação',
-		'tipo':'Controle',
-		'acao':'Padrão',
-		'alcance':'Perto',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Variável',
-		'tipo':'Geral',
-		'acao':'Padrão',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Velocidade',
-		'tipo':'Movimento',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		},
-		{
-		'grad': 0,
-		'nome':'Voo',
-		'tipo':'Movimento',
-		'acao':'Livre',
-		'alcance':'Pessoal',
-		'duracao':'Sustentado',
-		'resistencia':''
-		}
-	);
+			{'descritor': 'Água', 'nome':'Afogar', 'grad':0, 'descricao':'Aflição à Distância Cumulativa (Resistido e Sobrepujado por Fortitude; Fatigado, Exausto, Incapacitado), Concentração'},
+			{'descritor': 'Água', 'nome':'Arma de água', 'grad':0, 'descricao':'Dano baseado em força'},
+			{'descritor': 'Água', 'nome':'Canhão de água', 'grad':0, 'descricao':'Aflição em área(linha) Cumulativa (Resistida por Esquiva, sobrepujada por Fortitude; Tonto, Caído), Grau Limitado; 1,5m de largura 9m de comprimento'},
+			{'descritor': 'Água', 'nome':'Desidratar', 'grad':0, 'descricao':'Aflição Cumulativa (Fatigado, Exausto, Incapacitado), Resistido e Sobrepujado por Fortitude'},
+			{'descritor': 'Água', 'nome':'Rajada de Água', 'grad':0, 'descricao':'Dano à distância (Impacto de Água)'},
+			{'descritor': 'Água', 'nome':'Respingo Cegante', 'grad':0, 'descricao':'Aflição em área (cone) Cumulativa (Resistida por Esquiva sobrepujada por Fortitude; Prejuficado, Deficiente, Desatento), Limitado à Visão'},
+			{'descritor': 'Água', 'nome':'Tsunami', 'grad':'', 'descricao':'Dano à distância em Área (linha) 7 (80m de comprimento, 2m para o interior), Limitado ao longo da linha costeira, Limitado à origem de corpos de água'},
+			{'descritor': 'Água', 'nome':"À prova d'água", 'grad':'', 'descricao':'Imunidade 10 (efeitos de água)'},
+			{'descritor': 'Água', 'nome':'Escudo de água', 'grad':0, 'descricao':'Proteção Impenetrável, Sustentado'},
+			{'descritor': 'Água', 'nome':'Neblina', 'grad':0, 'descricao':'Ambiente (visibilidade limitada)'},
+			{'descritor': 'Água', 'nome':'Parede de Água', 'grad':0, 'descricao':'Criar Barreira, Limitada a paredes'},
+			{'descritor': 'Água', 'nome':'Moldar Água', 'grad':0, 'descricao':'Criar Formas de àgua'},
+			{'descritor': 'Água', 'nome':'Renegeração Aquática', 'grad':0, 'descricao':'Regeneração, Médio (Água)'},
+			{'descritor': 'Água', 'nome':'Resistente à Fogo', 'grad':'0', 'descricao':'Imunidade 10 (efeitos de fogo), Limitado a meio efeito'},
+			{'descritor': 'Água', 'nome':'Aquaporte', 'grad':0, 'descricao':'Teleporte, Médio(Corpos de água)'},
+			{'descritor': 'Água', 'nome':'Caminhar na água', 'grad':'', 'descricao':'Movimento 1 (Andar na água)'},
+			{'descritor': 'Água', 'nome':'Natação', 'grad':0, 'descricao':'Natação'},
+			{'descritor': 'Água', 'nome':'Salto de Golfinho', 'grad':0, 'descricao':'Pular, Limitado a Saltar da água'},
+			{'descritor': 'Água', 'nome':'Aquático', 'grad':'', 'descricao':'Imunidade 3(Frio, afogamento, Pressão), Movimento 1 (adaptação ambiental: Aquático), Sentidos 1 (visão na penumbra)'},
+			{'descritor': 'Água', 'nome':'Criaturas de água', 'grad':0, 'descricao':'Invocar criatura de água 8 (Capanga 120 pontos)'},
+			{'descritor': 'Água', 'nome':'Cura hídrica', 'grad':0, 'descricao':'Cura'},
+			{'descritor': 'Água', 'nome':'Esguicho', 'grad':0, 'descricao':'Nulificar Efeitos Solúveis em Água, Amplo, Simultâneo'},
+			{'descritor': 'Água', 'nome':'Forma de água', 'grad':'', 'descricao':'Camuflagem 4 (Visual, Limitado a subaquático),Imunidade 30 (efeitos de fortitude), Insubstancial 2, Natação 2 (5km/h), Ativação (Ação de movimento, -1 ponto)'},
+			{'descritor': 'Água', 'nome':'Acumular água', 'grad':0, 'descricao':'Crescimento, Limitado a enquanto na forma de água e em um grande corpo de água'},
+			{'descritor': 'Água', 'nome':'Hidrocinese', 'grad':0, 'descricao':'Mover Objeto, Percepção, Limitado à água'},
+			{'descritor': 'Água', 'nome':'Maestria Marinha', 'grad':0, 'descricao':'Invocar vida marinha, Horda, Elo Mental, Mpultiplos capangas, tipo geral variável (vida marinha), Limitado a água ou próximo a ela, Auto-alimentado'},
+			{'descritor': 'Água', 'nome':'Telepatia Marinha', 'grad':'', 'descricao':'Compreender 2 (animais), Limitado à vida marinha'},
+			{'descritor': 'Água', 'nome':'Vidência com água', 'grad':0, 'descricao':'Sentidos Remotos (visual e auditivo), Médio (Água)'},
+			{'descritor': 'Animal', 'nome':'Armas Naturais', 'grad':0, 'descricao':'Dano baseado em força'},
+			{'descritor': 'Animal', 'nome':'Bioeletricidade', 'grad':0, 'descricao':'Aflição cumulativa(choque elétrico; Resistido e sobrepujado por Fortitude; Tonto, Atordoado, Incapacitado)'},
+			{'descritor': 'Animal', 'nome':'Carga Feroz', 'grad':0, 'descricao':'Dano baseado em força, Limitado a quando estiver em carga'},
+			{'descritor': 'Animal', 'nome':'Constrição', 'grad':0, 'descricao':'Força aumentada, Limitada a agarrar'},
+			{'descritor': 'Animal', 'nome':'Espinhos', 'grad':0, 'descricao':'Dano de reação (ao ser tocado)'},
+			{'descritor': 'Animal', 'nome':'Rugido aterrorizante', 'grad':0, 'descricao':'Intimidação aumentada'},
+			{'descritor': 'Animal', 'nome':'Teia', 'grad':0, 'descricao':'Aflição Acumulativa a distância (resistido por Esquiva, sobrepujado por Dano; Impedido e Vulnerável, Indefeso e Imobilizado), condição extra, grau limitado'},
+			{'descritor': 'Animal', 'nome':'Veneno', 'grad':0, 'descricao':'Aflição progressiva (resistido com resistência, sobrepujado por fortitude; Tonto, atordoado, Incapacitado)'},
+			{'descritor': 'Animal', 'nome':'Couro Protetor', 'grad':0, 'descricao':'Proteção'},
+			{'descritor': 'Animal', 'nome':'Esgueirar', 'grad':0, 'descricao':'Movimento (permear), Limitado a espaços pequenos'},
+			{'descritor': 'Animal', 'nome':'Regeneração', 'grad':0, 'descricao':'Regeneração'},
+			{'descritor': 'Animal', 'nome':'Asas', 'grad':0, 'descricao':'Voo, Asas'},
+			{'descritor': 'Animal', 'nome':'Deslizar serpentino', 'grad':'', 'descricao':'Movimento 1 (deslizar)'},
+			{'descritor': 'Animal', 'nome':'Camuflagem camaleônica', 'grad':'', 'descricao':'Camuflagem visual 2, Mesclar'},
+			{'descritor': 'Animal', 'nome':'Companheiro Animal', 'grad':0, 'descricao':'Invocar companheiro animal, heroico, poder próprio'}
+			);
 
 /*------------------------------------------ conceito */
 	/*listaConceitos.push(
@@ -692,36 +239,45 @@ function gerarHeroi(){
 	*/
 /*--------------------------------------- descritores */
 	listaDescritores.push(
-		'elemental',
-		'ar',
-		'fogo',
-		'magma',
-		'terra',
-		'planta',
 		'água',
-		'vapor',
-		'gelo',
-		'madeira',
-		'eletricidade/raio',
+		'animais',
+		'ar',
+		'armadura',
+		'cinético',
 		'clima',
-		'divino/celestial',
-		'sombra',
-		'luz',
-		'magnético',
-		'radiação',
-		'sônico',
-		'espaço',
-		'quântico',
-		'sorte',
-		'biológico',
 		'cósmico',
-		'interplanetário',
-		'extradimensional',
-		'mágico',
-		'bem',
-		'mal',
-		'demoníaco',
-		'psíquico'
+		'dimensional',
+		'elementos',
+		'eletricidade',
+		'fogo',
+		'força',
+		'frio',
+		'gravidade',
+		'ilusão',
+		'invocação',
+		'luz',
+		'magia',
+		'magnético',
+		'marcial',
+		'mental',
+		'metapoderes',
+		'metamorfose',
+		'morte',
+		'planta',
+		'radiação',
+		'sensorial',
+		'sonho',
+		'sônico',
+		'sorte',
+		'talento',
+		'tamanho',
+		'tecnologia',
+		'teleporte',
+		'tempo',
+		'terra',
+		'trevas',
+		'velocidade',
+		'vida',
 	);
 
 /*-------------------------------------- perícias */
@@ -822,8 +378,8 @@ function gerarHeroi(){
 
 	 
 	 /* heroi.conceito=listaConceitos[randomAte(listaConceitos.length)]; */
-	 heroi.descritores.push(listaDescritores[randomAte(listaDescritores.length)]);
-	 heroi.descritores.push(listaDescritores[randomAte(listaDescritores.length)]);
+	 /*heroi.descritores.push(listaDescritores[randomAte(listaDescritores.length)]);
+	 /*heroi.descritores.push(listaDescritores[randomAte(listaDescritores.length)]);
 	 /*heroi.idade=randomEntre(14,60);
 	 heroi.altura=(randomEntre(165,190))/100;*/
 	 /* define os valores de ataque cac e ataquedist */

@@ -8,10 +8,14 @@ html{
 }
 
 body{
-	background-color: white;
-	background-image: url('../imagens/l2.png');
-	height: 100%;
 	width: 100%;
+	background-color: white;
+	background-image: url(../imagens/l2b.png);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 }
@@ -20,79 +24,75 @@ body{
 	border: 1px solid red;
 }
 
-.mm2{
-	border: 1px solid blue;
+div#social-icon a{
+	font-size: 1.5em;
+	color: purple;
 }
 
-div#conteudo{
-	padding: 20px;
-	padding-bottom: 70px;
-	background-color: white;
+div#social-icon a:hover{
+	color: red;
+	text-decoration: none;
 }
-
-div#apoieBox{
-	margin: 0 auto;
-	color: black;
-	background: hsla(50, 57%, 47%, 1);
-	background: linear-gradient(90deg, hsla(50, 57%, 47%, 1) 0%, hsla(56, 83%, 82%, 1) 100%);
-	background: -moz-linear-gradient(90deg, hsla(50, 57%, 47%, 1) 0%, hsla(56, 83%, 82%, 1) 100%);
-	background: -webkit-linear-gradient(90deg, hsla(50, 57%, 47%, 1) 0%, hsla(56, 83%, 82%, 1) 100%);
-}
-
 
 footer{
 	width: 100%;
+	color: lightgray;
 	text-align: center;
-	background-color: lightgray;
+	background-color: black;
 	padding: 10px;
 	bottom: 0;
 }
 
-footer a{
-	color: #ba2a29;
-}
-
-footer a:hover{
-	color: gray;
-	text-decoration: none;
-}
 
 /* Navegação **************************************************/
 
-div#menu{
-	text-align: center;
+
+/* Oráculos ***************************************/
+div.boxPrincipal{
 	background-color: white;
+	padding: 15px;
+	padding-bottom: 200px;
 }
 
-.menu-link {
-	padding: 20px 0;
-	border-top-right-radius: 1em;
-	border-top-left-radius: 1em;
+
+div#log{
 	background-color: white;
-	cursor:pointer;
-	border: 1px solid black;
+	margin-top: 15px;
+	border: 1px solid black;	
+	border-radius: 1%;
+	height: 500px;
+	overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-.menu-passivo{
-	border-bottom: 1px solid black;
-	color: gray;
-	background-color: lightgray;
+div.divFlex{
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
 }
 
-.menu-ativo{
-	color: black;
-	border: 1px solid black;
-	border-bottom: none;
+.divFlex button{
+	margin: 2px;
+	/*align-self: flex-start;*/
+	flex-basis: 100px;
 }
 
 
+div#divBotoesImprime a.btn{
+	color: white;
+}
 
 /* Tipografia *************************************************/
-
 body{
 	font-family: 'Roboto', sans-serif;
 }
 
+div#log.imprimir{
+	padding: 20px;
+	height: auto!important;
+	overflow-y: hidden;
+	border: none;
+}
 
 /* Imagens *************************************************/
 
@@ -112,11 +112,38 @@ body{
 }
 
 
-
 /* Media Queries *************************************************/
 
+@media print {
+	body{
+			/*font-size: 1.3em!important;*/
+		}	
+	  body * {
+	   visibility: hidden;
+	  }
+
+	  #divImprimir, #divImprimir * {
+	    visibility: visible;
+	  }
+
+	  #divImprimir{
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	  }
+
+	  .btn-remover{
+	  	visibility:hidden!important;
+	  }
+		
+}
 
 @media (max-width: 575.98px) {
+
+	div.boxPrincipal{
+	padding-bottom: 20px;
+	}
 	
 	.menu-link {
 	font-size: .8em;
@@ -142,3 +169,46 @@ body{
 @media (max-width: 1199.98px) {
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

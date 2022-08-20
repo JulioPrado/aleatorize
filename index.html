@@ -1,28 +1,77 @@
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8"/>
-<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<title>Aleatorize</title>
-<link rel="stylesheet" href="css/oraculo.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<meta charset="UTF-8"/>
+	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!-- icones sociais -->
+	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<title>Aleatorize</title>
+	<link rel="stylesheet" href="css/estilo.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6 d-flex align-items-center justify-content-center">
-			<h1>Oráculo</h1>
+			<div class="text-center">
+				<h1>Bem-vindo ao </h1>
+				
+			</div>
 		</div>
 		<div class="col-md-6">
 				<img class="img-fluid" src="imagens/logo.png">
+
+				
 		</div>
 		
 	</div>
+</div><!-- fim container -->
+<div class="container-fluid p-5 boxPrincipal">
+	<div class="row">
+			<h3 class="m-5">Geradores Aleatórios de personagens</h3>
+		<p>
+			Existem diversas formas de se abstrair PDMs definindo valores padrões de rolagens, porém alguns Mestres preferem ter a ficha completa de alguns personagens para ter mais profundidade neles. O tempo que se gasta produzindo as fichas uma a uma poderia ser usado pelo narrador para continuar desenvolvendo a trama para o RPG, por exemplo, ou mesmo para fazer outras atividades que a vida adulta exige.
 
-	<div class="row boxPrincipal pt-5">
+			Seja você um narrador ou um jogador de RPG solo, com certeza você já passou por algo parecido. Então, aqui você encontrará geradores de fichas aleatórias para te auxiliar a poupar tempo e a focar no que realmente importa: a diversão.
+		</p>
+
+		<h4 class="m-5">Nossos Geradores:</h4>
+	</div>	
+	<div class="row">
+		<div class="col-sm-4">
+			<a href="mem3e/" target="_blank">
+				<div class="card">
+			 		<img class="gerador-img" src="imagens/mem3.png">
+				</div>
+			</a>
+		</div>
+		<div class="col-sm-4">
+			<a href="terradevastada/" target="_blank">
+				<div class="card">
+		 			<img class="gerador-img" src="imagens/terradevastada.png">
+				</div>
+			</a>
+		</div>
+
+		<div class="col-sm-4">
+			<a href="" >
+				<div class="card">
+		 			<img class="gerador-img" src="imagens/savageCons.jpg">
+				</div>
+			</a>
+		</div>
+	</div>
+</div><!-- fim container -->
+<div id="oraculo" class="container-fluid boxPrincipal">
+	<hr>
+	<div class="row align-items-center justify-content-center text-center">
+		<h1>ORÁCULO</h1>
+	</div>
+
+	<div class="row align-items-center pt-5">
 		<div id="botoes" class="col-sm-6">
 
 			<span>1º Selecione o tipo de cenário:</span>
@@ -151,47 +200,20 @@
 	</div>
 
 	<div id="divImprimir">
-			
 
-	</div>
-</div> <!-- fim container -->
-
-<div class="container-fluid px-5 boxPrincipal">
-	<hr>
-	<div class="row">
-			<h3>Geradores Aleatórios</h3>
-		<p class="mt-5">
-			Existem diversas formas de se abstrair PDMs definindo valores padrões de rolagens, porém alguns Mestres preferem ter a ficha completa de alguns personagens para ter mais profundidade neles. O tempo que se gasta produzindo as fichas uma a uma poderia ser usado pelo narrador para continuar desenvolvendo a trama para o RPG, por exemplo, ou mesmo para fazer outras atividades que a vida adulta exige.
-
-			Seja você um narrador ou um jogador de RPG solo, com certeza você já passou por algo parecido. Então, aqui você encontrará geradores de fichas aleatórias para te auxiliar a poupar tempo e a focar no que realmente importa: a diversão.
-		</p>
-
-		<h4>Nossos Geradores:</h4>
 	</div>	
-	<div class="row">
-		<div class="col-sm-4">
-			<a href="geradordeherois/" target="_blank">
-				<div class="card">
-			 		<img class="gerador-img" src="imagens/mem3.png">
-				</div>
-			</a>
-		</div>
-		<div class="col-sm-4">
-			<a href="geradorterradevastada/" target="_blank">
-				<div class="card">
-		 			<img class="gerador-img" src="imagens/terradevastada.png">
-				</div>
-			</a>
-		</div>
-		<div class="col-sm-4">
-
-		</div>
-	</div>
 </div>
 <footer>
-		<span>
-			Desenvolvido por <a href="https://www.julioprado.github.io" target="_blank"> Julio Prado</a>.
-		</span>
+	<div id="social-icon">
+					<a href="https://www.instagram.com/aleatorize.online/" class="px-1" target="_blank">
+					<i class="fab fa-lg fa-instagram"></i> Aleatorize.online
+				</a>
+	</div>
+	<span>
+		Desenvolvido e mantido por Julio Prado</a>.
+	</span>
+
+	
 </footer>
 
 
