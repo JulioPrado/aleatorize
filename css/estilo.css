@@ -99,16 +99,20 @@ div#log.imprimir{
 
 /* Cards ****************************************************/
 
-.card{
-	display: block;
-	margin: 10px auto;
-}
+
 
 .gerador-img{
 	width: 200px;
 	height: 200px;
 	display: block;
-	margin: 0 auto;
+	margin: 5px auto;
+}
+
+.materiais-img{
+	width: 250px;
+	height: 200px;
+	display: block;
+	margin: 5px auto;
 }
 
 
