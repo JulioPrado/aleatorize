@@ -534,34 +534,18 @@ function ferimento(){
 function nomeFantasia(){
 
 	function gerarNome(){
-		let quantidadeDeSilabas= randomEntre(2,3);
-		console.log(quantidadeDeSilabas);
+		let quantidadeDeSilabas= 3;
 		let nome="";
 
-		for (contadorSilaba=1;contadorSilaba<=quantidadeDeSilabas;contadorSilaba++){
+		let priSilaba=['A','Be','De','El','Fa','Jo','Ki','La','Ma','Na','O','Pa','Re','Si','Ta','Va','','','',''];
+		let segSilaba=['bar','ched','dell','far','gran','hal','jen','kel','lim','mor','net','penn','quil','rond','sark','shen','tur','vash','yor','zen'];
+		let terSilaba=['a','ac','ai','al','am','an','ar','ea','el','er','ess','ett','ic','id','il','in','is','or','us',''];
 
-			if (contadorSilaba>1) {
-				nome= nome + consoanteAleatoria() + vogalAleatoria() ;
-			}else{
-				nome= nome + consoanteAleatoria().toUpperCase() + vogalAleatoria() ;
-			}
-		}	
+		
+		nome= priSilaba[randomEntre(0, priSilaba.length-1)] + segSilaba[randomEntre(0, segSilaba.length-1)] + terSilaba[randomEntre(0, terSilaba.length-1)];
 
-		function vogalAleatoria(){
-
-		  let listaVogais="aeiou";
-		  let numeroAleatorio=randomEntre(1, listaVogais.length);
-
-		  return listaVogais.substring(numeroAleatorio-1,numeroAleatorio);
-		}
-
-		function consoanteAleatoria(){
-
-		  let listaConsoantes="bcdfghjklmnpqrstwvxyz";
-		  let numeroAleatorio=randomEntre(1, listaConsoantes.length);
-
-		  return listaConsoantes.substring(numeroAleatorio-1,numeroAleatorio);
-		}
+		  
+		
 		return nome;
 	}
 	escreverLog("<span style='font-weight: bolder'>Nome fantasia: </span>"+gerarNome()+' '+gerarNome());
