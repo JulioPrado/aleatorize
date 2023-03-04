@@ -150,14 +150,6 @@ function tipoOraculo(tipo){
 			tipoCenario = tipo;
 		break;
 
-		case  'cyberpunk':
-			tipoCenario = tipo;
-		break;
-
-		case  'pokemon':
-			tipoCenario = tipo;
-		break;
-
 		default: console.log('Tipo de oráculo inválido.');
 	}	
 }
@@ -218,14 +210,6 @@ function uneArrays(tipo){
 			arrayAux=arrayAux.concat(tipo+'Supers',tipo+'Moderno','lista'+tipo);
 		break;
 
-		case 'cyberpunk':
-			arrayAux=arrayAux.concat(tipo+'Cyberpunk',tipo+'Moderno','lista'+tipo);
-		break;
-
-		case 'pokemon':
-			arrayAux=arrayAux.concat(tipo+'Pokemon',tipo+'Moderno','lista'+tipo);
-		break;
-
 		default: console.log('Cenário inválido.');
 	}
 	return arrayAux;
@@ -250,14 +234,6 @@ function reviravolta(){
 
 		case 'supers':
 			arrayAux=arrayAux.concat(reviravoltaSupers,reviravoltaModerno,listareviravolta);
-		break;
-
-		case 'cyberpunk':
-			arrayAux=arrayAux.concat(reviravoltaCyberpunk,reviravoltaModerno,listareviravolta);
-		break;
-
-		case 'pokemon':
-			arrayAux=arrayAux.concat(reviravoltaPokemon,reviravoltaModerno,listareviravolta);
 		break;
 
 		default: console.log('Cenário inválido.');
@@ -286,14 +262,6 @@ function relacionamento(){
 			arrayAux=arrayAux.concat(relacionamentoSupers,relacionamentoModerno,listarelacionamento);
 		break;
 
-		case 'cyberpunk':
-			arrayAux=arrayAux.concat(relacionamentoCyberpunk,relacionamentoModerno,listarelacionamento);
-		break;
-
-		case 'pokemon':
-			arrayAux=arrayAux.concat(relacionamentoPokemon,relacionamentoModerno,listarelacionamento);
-		break;
-
 		default: console.log('Cenário inválido.');
 	}
 	escreverLog("<span style='font-weight: bolder'>Relacionamento: </span>"+arrayAux[randomEntre(0,arrayAux.length-1)]);
@@ -317,14 +285,6 @@ function lugarNatureza(){
 
 		case 'supers':
 			arrayAux=arrayAux.concat(naturezaSupers,naturezaModerno,listanatureza);
-		break;
-
-		case 'cyberpunk':
-			arrayAux=arrayAux.concat(naturezaCyberpunk,naturezaModerno,listanatureza);
-		break;
-
-		case 'pokemon':
-			arrayAux=arrayAux.concat(naturezaPokemon,naturezaModerno,listanatureza);
 		break;
 
 		default: console.log('Cenário inválido.');
@@ -352,14 +312,6 @@ function lugarUrbano(){
 			arrayAux=arrayAux.concat(urbanoSupers,urbanoModerno,listaurbano);
 		break;
 
-		case 'cyberpunk':
-			arrayAux=arrayAux.concat(urbanoCyberpunk,urbanoModerno,listaurbano);
-		break;
-
-		case 'pokemon':
-			arrayAux=arrayAux.concat(urbanoPokemon,urbanoModerno,listaurbano);
-		break;
-
 		default: console.log('Cenário inválido.');
 	}
 	escreverLog("<span style='font-weight: bolder'>Lugar: </span>"+arrayAux[randomEntre(0,arrayAux.length-1)]);
@@ -383,14 +335,6 @@ function complicacao(){
 
 		case 'supers':
 			arrayAux=arrayAux.concat(complicacaoSupers,complicacaoModerno,listacomplicacao);
-		break;
-
-		case 'cyberpunk':
-			arrayAux=arrayAux.concat(complicacaoCyberpunk,complicacaoModerno,listacomplicacao);
-		break;
-
-		case 'pokemon':
-			arrayAux=arrayAux.concat(complicacaoPokemon,complicacaoModerno,listacomplicacao);
 		break;
 
 		default: console.log('Cenário inválido.');
@@ -418,14 +362,6 @@ function gancho(){
 			arrayAux=arrayAux.concat(ganchoSupers,ganchoModerno,listagancho);
 		break;
 
-		case 'cyberpunk':
-			arrayAux=arrayAux.concat(ganchoCyberpunk,ganchoModerno,listagancho);
-		break;
-
-		case 'pokemon':
-			arrayAux=arrayAux.concat(ganchoPokemon,ganchoModerno,listagancho);
-		break;
-
 		default: console.log('Cenário inválido.');
 	}
 	escreverLog("<span style='font-weight: bolder'>Gancho: </span>"+arrayAux[randomEntre(0,arrayAux.length-1)]);
@@ -451,14 +387,6 @@ function pessoa(){
 			arrayAux=arrayAux.concat(pessoaSupers,pessoaModerno,listapessoa);
 		break;
 
-		case 'cyberpunk':
-			arrayAux=arrayAux.concat(pessoaCyberpunk,pessoaModerno,listapessoa);
-		break;
-
-		case 'pokemon':
-			arrayAux=arrayAux.concat(pessoaPokemon,pessoaModerno,listapessoa);
-		break;
-
 		default: console.log('Cenário inválido.');
 	}
 	escreverLog("<span style='font-weight: bolder'>Pessoa: </span>"+arrayAux[randomEntre(0,arrayAux.length-1)]);
@@ -482,14 +410,6 @@ function objeto(){
 
 		case 'supers':
 			arrayAux=arrayAux.concat(objetoSupers,objetoModerno,listaobjeto);
-		break;
-
-		case 'cyberpunk':
-			arrayAux=arrayAux.concat(objetoCyberpunk,objetoModerno,listaobjeto);
-		break;
-
-		case 'pokemon':
-			arrayAux=arrayAux.concat(objetoPokemon,objetoModerno,listaobjeto);
 		break;
 
 		default: console.log('Cenário inválido.');
@@ -1021,15 +941,6 @@ var reviravoltaSupers=
 'O inimigo revela um novo poder.'
 ];
 
-var reviravoltaCyberpunk=
-[
-
-];
-
-var reviravoltaPokemon=
-[
-
-];
 
 
 /* RELACIONAMENTO **************************************/
@@ -1103,15 +1014,6 @@ var relacionamentoSupers=
 
 ];
 
-var relacionamentoCyberpunk=
-[
-
-];
-
-var relacionamentoPokemon=
-[
-
-];
 
 /* NATUREZA *******************************************/
 
@@ -1181,15 +1083,7 @@ var naturezaSupers=
 'Outra dimensão'
 ];
 
-var naturezaCyberpunk=
-[
 
-];
-
-var naturezaPokemon=
-[
-
-];
 /* CÔMODO ******************************************/
 var listaComodo=
 [
@@ -1338,17 +1232,7 @@ var urbanoSupers=
 
 ];
 
-var urbanoCyberpunk=
-[
 
-];
-
-var urbanoPokemon=
-[
-'Centro pokemon',
-'Ginásio',
-'Pokemarket'
-];
 
 /* COMPLICAÇÃO ***************************************/
 
@@ -1403,15 +1287,7 @@ var complicacaoSupers=
 
 ];
 
-var complicacaoCyberpunk=
-[
 
-];
-
-var complicacaoPokemon=
-[
-
-];
 
 /* GANCHO *****************************************/
 
@@ -1452,15 +1328,7 @@ var ganchoSupers=
 
 ];
 
-var ganchoCyberpunk=
-[
 
-];
-
-var ganchoPokemon=
-[
-
-];
 
 /* PESSOA ************************************************/
 var listapessoa=
@@ -1592,15 +1460,6 @@ var pessoaSupers=
 	
 ];
 
-var pessoaCyberpunk=
-[
-
-];
-
-var pessoaPokemon=
-[
-
-];
 
 /* COISA ********************************************/
 
@@ -1666,15 +1525,7 @@ var objetoSupers=
 'Traje tecnológico'
 ];
 
-var objetoCyberpunk=
-[
 
-];
-
-var objetoPokemon=
-[
-'Pokebola'
-];
 
 /* ORACULOS GERAIS *********************************/
 

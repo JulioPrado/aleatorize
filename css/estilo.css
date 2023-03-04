@@ -1,10 +1,14 @@
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
-
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 @charset "UTF-8";
 
 
 html{
 	scroll-behavior: smooth;
+}
+
+.centro{
+	margin: 0 auto;
 }
 
 body{
@@ -20,9 +24,6 @@ body{
 	padding: 0;
 }
 
-.mm{
-	border: 1px solid red;
-}
 
 div#social-icon a{
 	font-size: 1.5em;
@@ -45,6 +46,40 @@ footer{
 
 
 /* Navegação **************************************************/
+
+
+nav ul li{
+	padding-left: 20px;
+	padding-right: 20px;
+	
+}
+
+nav ul li a.nav-link{
+	font-size: 1.6em;
+	color: black;
+}
+
+nav ul li.nav-item:hover{
+	text-decoration: underline;
+}
+
+/* Cards geradores *******************************/
+
+.card li.estado{
+	list-style: none;
+}
+
+.finalizado{
+	color: green;
+}
+
+.utilizavel{
+	color: orange;
+}
+
+.emConstrucao{
+	color: red;
+}
 
 
 /* Oráculos ***************************************/
@@ -99,20 +134,16 @@ div#log.imprimir{
 
 /* Cards ****************************************************/
 
-
-
-.gerador-img{
+.materiais-img{
 	width: 200px;
 	height: 200px;
 	display: block;
 	margin: 5px auto;
 }
 
-.materiais-img{
-	width: 200px;
-	height: 200px;
-	display: block;
-	margin: 5px auto;
+.materiais-img:hover{
+	box-shadow: 2px 2px 5px black;
+	transform: scale(1.2);
 }
 
 

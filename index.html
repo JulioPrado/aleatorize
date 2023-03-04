@@ -16,64 +16,112 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6 d-flex align-items-center justify-content-center">
-			<div class="text-center">
-				<h1>Bem-vindo ao </h1>
-				
-			</div>
 		</div>
 		<div class="col-md-6">
 				<img class="img-fluid" src="imagens/logo.png">
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col d-flex align-items-right justify-content-right">
-			<a class="btn btn-lg btn-danger" href="./apoiar" target="_blank">Apoiar</a>	
-		</div>
-	</div>
 
+	<nav class="navbar navbar-expand-md mb-3">
+  		<button class="navbar-toggler bg-dark navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+  		<div class="collapse navbar-collapse" id="navbarNav">
+    		<ul class="navbar-nav">
+      			<li class="nav-item">
+       				<a class="nav-link" href="#home">Início</a>
+      			</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#geradores">Geradores</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#materiais">Materiais</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#oraculo">Oráculo</a>
+				</li>
+				<li>
+					<a class="btn btn-lg btn-danger" href="./apoiar" target="_blank">Apoie</a>
+				</li>
+    		</ul>
+  		</div>
+	</nav>
 </div><!-- fim container -->
 <div class="container-fluid p-5 boxPrincipal">
-
-
-
-
+	<div class="row" id="home">
+		<h3 class="m-5">Bem-vindo</h3>
+	</div>
 	<div class="row">
-			<h3 class="m-5">Geradores Aleatórios de personagens</h3>
 		<p>
-			Existem diversas formas de se abstrair PDMs definindo valores padrões de rolagens, porém alguns Mestres preferem ter a ficha completa de alguns personagens para ter mais profundidade neles. O tempo que se gasta produzindo as fichas uma a uma poderia ser usado pelo narrador para continuar desenvolvendo a trama para o RPG, por exemplo, ou mesmo para fazer outras atividades que a vida adulta exige.
-
-			Seja você um narrador ou um jogador de RPG solo, com certeza você já passou por algo parecido. Então, aqui você encontrará geradores de fichas aleatórias para te auxiliar a poupar tempo e a focar no que realmente importa: a diversão.
+			Seja você um narrador ou um jogador de RPG solo, com certeza você já passou por alguma situação em que precisava de uma ficha de personagem pronta que não fez previamente, ou talvez uma grande quantidade de fichas de uma vez. Ou então precisou improvisar uma aventura de última hora ou mesmo criar uma localidade que não foi pensada antes.
 		</p>
+		<p>
+		 	Pensando nessas e em outras situações, desenvolvemos aplicações e materiais em PDF para te auxiliar na geração rápida de personagens, ferramentas para aleatorizar um pouco mais as coisas e ajudar nas demais questões envolvendo RPG de mesa, inclusive um oráculo bem completo. 
+		</p>
+		<p>
+			Tudo isso para te auxiliar a poupar tempo e a focar no que realmente importa: a diversão. <br><br> Boas rolagens!
+		</p>
+	</div>
+	<div class="row" id="geradores">
+		<h3 class="m-5">Geradores Aleatórios</h3>
+	</div>
+	<div class="card-group">
+			<div class="card text-center border m-2">
+				<div class="card-header">
+				Gerador de personagem
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">Mutantes & Malfeitores 3ªed.</h5>
+					<p class="card-text">Crie um herói aleatório utilizando os poderes do livro "Perfis de Poder", que aos poucos estão sendo adicionados.</p>
+					</div>
+				<div class="card-footer text-muted">
+					<li class="estado utilizavel"> Utilizável</li>
+					<a href="mem3e" class="btn btn-danger"  target="_blank">Acessar</a>
+					<br>
+					Atualizado em 26/02/23
+				</div>
+			</div>
+			<div class="card text-center border m-2">
+				<div class="card-header">
+				Gerador de personagem
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">Terra Devastada ed. Apocalipse</h5>
+					<p class="card-text">Crie diversos personagens humanos ou infectados de uma só vez.</p>
+					
+				</div>
 
-		<h4 class="m-5">Nossos Geradores:</h4>
-	</div>	
-	<div class="row">
-		<div class="col-sm-4">
-			<a href="mem3e/" target="_blank">
-				<div>
-			 		<img class="gerador-img" src="imagens/mem3.png">
+				<div class="card-footer text-muted">
+					<li class="estado finalizado">Finalizado</li>
+					<a href="terradevastada" class="btn btn-danger" target="_blank">Acessar</a>
+					<br>
+					Atualizado em 20/08/22
 				</div>
-			</a>
-		</div>
-		<div class="col-sm-4">
-			<a href="terradevastada/" target="_blank">
-				<div>
-		 			<img class="gerador-img" src="imagens/terradevastada.png">
+			</div>
+			<div class="card text-center border m-2">
+				<div class="card-header">
+				Gerador de personagem
 				</div>
-			</a>
-		</div>
+				<div class="card-body">
+					<h5 class="card-title">Savage Worlds Ed. Aventura</h5>
+					<p class="card-text">Selecione o tipo de cenário, os compêndios que quer utilizar e gere quantos personagens quiser!</p>
+				</div>
 
-		<div class="col-sm-4">
-			<a href="" >
-				<div>
-		 			<img class="gerador-img" src="imagens/savageCons.jpg">
+				<div class="card-footer text-muted">
+					<li class="estado emConstrucao">Em Construção</li>
+					<a href="#" class="btn btn-outline-danger disabled">Em Breve</a>
+					<br>
+					Atualizado em 02/03/23
 				</div>
-			</a>
-		</div>
+				
+			</div>
 	</div>
 
-	<h4 class="m-5">Materiais produzidos:</h4>
+	<div class="row" id="materiais">
+		<h3 class="m-5">Materiais</h3>
+	</div>
+
 	<div class="row">
 		<div class="col-md-4">
 			<a href="arquivos/Aleatorize-antagonistas-selvagens.pdf" target="_blank">
@@ -106,8 +154,6 @@
 		 		<option value="fantasia">Fantasia Medieval</option>
 		 		<option value="moderno" >Mundo Moderno</option>
 		 		<option value ="supers" >Super heróis</option>
-		 		<option value="cyberpunk" disabled>Cyberpunk</option>
-		 		<option value="pokemon" disabled>Pokemon</option>
 			</select>
 			<br/>
 			<span>2º Inicie a sessão:</span>
@@ -228,7 +274,8 @@
 	<div id="divImprimir">
 
 	</div>	
-</div>
+</div> <!-- fim box oraculo -->
+
 <footer>
 	<div id="social-icon">
 					<a href="https://www.instagram.com/aleatorize.online/" class="px-1" target="_blank">
@@ -237,7 +284,7 @@
 				
 	</div>
 	<span>
-		Desenvolvido e mantido por Julio Prado</a>. <a href="./apoiar">Apoie</a>
+		Desenvolvido e mantido por Julio Prado</a>. <a href="./apoiar" target="_blank">Apoie</a>
 	</span>
 
 
