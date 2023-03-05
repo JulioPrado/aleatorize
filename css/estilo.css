@@ -11,6 +11,12 @@ html{
 	margin: 0 auto;
 }
 
+div#cabecalho{
+	padding-top: 100px;
+	padding-bottom: 20px;
+	/* pra não fica atrás do menu */
+}
+
 body{
 	width: 100%;
 	background-color: white;
@@ -47,6 +53,11 @@ footer{
 
 /* Navegação **************************************************/
 
+#menu{
+	box-shadow: 0 4px 16px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+}
 
 nav ul li{
 	padding-left: 20px;
