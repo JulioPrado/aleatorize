@@ -103,7 +103,7 @@ div.boxPrincipal{
 
 div#log{
 	background-color: white;
-	margin-top: 15px;
+	padding-top: 80px;
 	border: 1px solid black;	
 	border-radius: 1%;
 	height: 500px;
