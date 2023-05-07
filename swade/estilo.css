@@ -1,0 +1,152 @@
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	font: "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif; 
+	width: 100%;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+div#tela{
+	width: 95vw;
+	max-width: 600px;
+	display: block;
+	margin: 0 auto;
+}
+
+div#telaInicial{
+	margin-bottom: 60px;
+	padding-left: 10px;
+}
+
+
+.clear{ 
+    clear:both; 
+} 
+
+.borda{
+	border: 1px solid black;
+	padding: 5px;
+	min-height: 250px; /* para que a caixa de ataques não fique menor qu a de defesas.  */
+}
+
+.right{ 
+    float: right;
+    text-align: right;
+} 
+
+
+.remover{
+	color: red;
+	cursor: pointer;
+}
+
+h1{ 
+    font-size: 2.2em; 
+} 
+     
+h2{ 
+    font-size: 2.0em;     
+} 
+     
+h3{ 
+    font-size: 1.8em; 
+} 
+     
+h4{ 
+    font-size: 1.6em;     
+} 
+     
+h5{ 
+    font-size: 1.4em; 
+    margin: 0px;  
+    padding: 0px;  
+} 
+     
+p{ 
+    font-size: 1.2em;     
+}
+
+footer{
+	width: 100%;
+	color: white;
+	background-color: black;
+	position: fixed;
+    bottom:0;
+	margin: 0;
+	padding: 10px;
+}
+
+footer a{
+	text-decoration: none;
+	color: #98c6d9;
+}
+
+footer a:hover{
+	color: gray;
+}
+
+/*
+------------FICHA------------------------------
+*/
+
+div#ficha{
+	margin-top: 10px;
+	margin-bottom: 60px;
+	padding: 10px;
+}
+
+.iconeDados{
+	width: 35px;
+}
+
+.negrito{
+	font-weight: bold;
+}
+
+
+@media print {
+	body{
+			/*font-size: 1.3em!important;*/
+		}	
+	 body * {
+	    visibility: hidden;
+	 }
+
+	 /*botao excluir ficha*/
+	 .remover{
+	 	visibility: hidden!important;
+	 }
+
+	  #ficha, #ficha * {
+	    visibility: visible;
+	  }
+	  #ficha {
+	  	margin-top: 0;
+	  	width: 100%;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	  }	
+}
+
+/* Extra small devices) */
+
+@media (max-width: 576px){
+	footer span{
+		font-size: .6em;
+  }
+  .iconeDados{
+	width: 25px;
+	}
+}
+
+@media (min-width: 577px) and (max-width: 800px){
+	footer span{
+		font-size: .8em;
+  }
+}
