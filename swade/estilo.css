@@ -117,14 +117,15 @@ div#ficha{
 	    visibility: hidden;
 	 }
 
-	 /*botao excluir ficha*/
-	 .remover{
+	 	#ficha, #ficha * {
+	    visibility: visible;
+	  }
+
+	  /*botao excluir ficha*/
+	 .remover, form input{
 	 	visibility: hidden!important;
 	 }
 
-	  #ficha, #ficha * {
-	    visibility: visible;
-	  }
 	  #ficha {
 	  	margin-top: 0;
 	  	width: 100%;
