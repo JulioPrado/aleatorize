@@ -104,6 +104,11 @@ div#ficha{
 	width: 35px;
 }
 
+.alinhaDireita{
+	max-width: 60%;
+	text-align: right;
+}
+
 .negrito{
 	font-weight: bold;
 }
@@ -137,17 +142,27 @@ div#ficha{
 
 /* Extra small devices) */
 
-@media (max-width: 576px){
+
+@media (max-width: 490px){
 	footer span{
 		font-size: .6em;
   }
   .iconeDados{
-	width: 25px;
+	/*width: 25px;*/
+	}
+
+	.alinhaDireita{
+		max-width: 100%;
+		padding: 10px;
 	}
 }
 
-@media (min-width: 577px) and (max-width: 800px){
+@media (min-width: 491px) and (max-width: 800px){
 	footer span{
 		font-size: .8em;
   }
+
+  .alinhaDireita{
+		max-width: 70%;
+	}
 }
