@@ -191,7 +191,7 @@ definirAtributos();
 
 	function definirPericias(){
 		/*define quantos pontos de perícia serão gastos na ficha*/
-		const pontosPericia = 15;
+		const pontosPericia = 12;
 
 		/*define qual o maior e menor entre agilidade, astúcia e espirito*/
 		var maiorAtributo;
