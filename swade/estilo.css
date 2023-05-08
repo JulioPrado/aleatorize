@@ -34,6 +34,7 @@ div#telaInicial{
 	min-height: 250px; /* para que a caixa de ataques não fique menor qu a de defesas.  */
 }
 
+
 .right{ 
     float: right;
     text-align: right;
@@ -109,6 +110,12 @@ div#ficha{
 	text-align: right;
 }
 
+.alinhaDireita span{
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
 .negrito{
 	font-weight: bold;
 }
@@ -147,13 +154,18 @@ div#ficha{
 	footer span{
 		font-size: .6em;
   }
+
+  .fichaFinal, #ficha{
+  	padding: 3px;
+  	margin: 0;
+  }
   .iconeDados{
-	/*width: 25px;*/
+	width: 25px;
 	}
 
 	.alinhaDireita{
 		max-width: 100%;
-		padding: 10px;
+		padding: 0px;
 	}
 }
 
