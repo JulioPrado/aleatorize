@@ -96,9 +96,9 @@ function gerarPersonagem(pos){
 			/*agilidade*/
 			'atirar':0,
 			'cavalgar':0,
-			'atletismo':1,
+			'atletismo':0,
 			'dirigir':0,
-			'furtividade':1,
+			'furtividade':0,
 			'ladinagem':0,
 			'lutar':0,
 			'navegar':0,
@@ -107,13 +107,13 @@ function gerarPersonagem(pos){
 			/* espirito */
 			'intimidar':0,
 			'performance':0,
-			'persuadir':1,
+			'persuadir':0,
 
 			/*Astúcia*/			
 			'ciencia':0,
 			'conAcademico':0,
 			'conBatalha':0,
-			'conGeral':1,
+			'conGeral':0,
 			'consertar':0,
 			'curar':0,
 			'eletronica':0,
@@ -121,7 +121,7 @@ function gerarPersonagem(pos){
 			'idiomas':0,
 			'jogar':0,
 			'ocultismo':0,
-			'perceber':1,
+			'perceber':0,
 			'pesquisar':0,
 			'provocar':0,
 			'sobrevivencia':0
@@ -230,7 +230,7 @@ definirAtributos();
 
 			default: console.log("Maior atributo inválido!");
 		}
-
+		var periciasMaisProvaveis=[];
 		function aumentarPericia(pericia){
 			if (pericia=='atirar') { if(personagem.atributos.agilidade>personagem.pericias.atirar){personagem.pericias.atirar++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.atirar++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
 			if (pericia=='cavalgar') { if(personagem.atributos.agilidade>personagem.pericias.cavalgar){personagem.pericias.cavalgar++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.cavalgar++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
@@ -260,21 +260,34 @@ definirAtributos();
 			if (pericia=='provocar') { if(personagem.atributos.astucia>personagem.pericias.provocar){personagem.pericias.provocar++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.provocar++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
 			if (pericia=='sobrevivencia') { if(personagem.atributos.astucia>personagem.pericias.sobrevivencia){personagem.pericias.sobrevivencia++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.sobrevivencia++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
 			console.log("Pericia inválida!!");	
+
+			periciasMaisProvaveis.push(pericia);
 		}
 
 
 		var arrayPericias = Object.keys(personagem.pericias);
+
+		/*pericias basicas*/
+		aumentarPericia('atletismo');
+		aumentarPericia('furtividade');
+		aumentarPericia('persuadir');
+		aumentarPericia('conGeral');
+		aumentarPericia('perceber');
+
+		if (personagem.atributos.forca>1) {periciasMaisProvaveis.push('lutar')};
+		if (personagem.atributos.agilidade>1){ periciasMaisProvaveis.push('atirar')};
+
 		for (var pontosGastar=pontosPericia; pontosGastar>0; pontosGastar--){
 
-			/*levando em consideração o atributo mais alto
 			let numAleat= randomEntre(1,10);
-
-			numAleat<7 ? pericia = periciasPrincipais[randomAte(periciasPrincipais.length)] : pericia = periciasSecundarias[randomAte(periciasSecundarias.length)];
-			*/
-
-
-			/*escolhe das perícias completamente aleatória */
-			pericia = arrayPericias[randomAte(arrayPericias.length)]
+			
+			if(numAleat>6){
+				pericia = periciasMaisProvaveis[randomAte(periciasMaisProvaveis.length)];
+	
+			} else{
+				pericia = arrayPericias[randomAte(arrayPericias.length)];
+				periciasMaisProvaveis.push(pericia);
+			}
 
 
 		 	aumentarPericia(pericia);
