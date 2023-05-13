@@ -73,7 +73,7 @@ function gerarPersonagem(pos){
 
 	var personagem={
 		'pos': pos,
-		'cenario':'Geral',
+		'cenario':'',
 		'raca': '',
 		'estagio':0,
 		'armadura':'',
@@ -93,31 +93,26 @@ function gerarPersonagem(pos){
 		'resistencia':0,
 		'vantagens':[],
 		'pericias':{
-			/*agilidade*/
+			'dirigir':0,
+			'pilotar':0,
+			'eletronica':0,
+			'hackear':0,
 			'atirar':0,
 			'cavalgar':0,
 			'atletismo':0,
-			'dirigir':0,
 			'furtividade':0,
 			'ladinagem':0,
 			'lutar':0,
 			'navegar':0,
-			'pilotar':0,
-
-			/* espirito */
 			'intimidar':0,
 			'performance':0,
-			'persuadir':0,
-
-			/*Astúcia*/			
+			'persuadir':0,	
 			'ciencia':0,
 			'conAcademico':0,
 			'conBatalha':0,
 			'conGeral':0,
 			'consertar':0,
 			'curar':0,
-			'eletronica':0,
-			'hackear':0,
 			'idiomas':0,
 			'jogar':0,
 			'ocultismo':0,
@@ -125,32 +120,61 @@ function gerarPersonagem(pos){
 			'pesquisar':0,
 			'provocar':0,
 			'sobrevivencia':0
-			/* AA
+			/*
 			'foco':0,
 			'fe':0,
 			'conjurar':0,
 			'psionicos':0,
-			'cieEstranha':0,*/
+			'cieEstranha':0*/
 			}
 	}
+
+
+/*********** Definir Cenário **********/
+
+personagem.cenario = document.getElementById('selectCenario').value;
 
 /************  RAÇAS *************************************/
 	function definirRaca(){
 
-	var listaRacas = [
-		"Anão",
-		"Androide",
-		"Aquariano",
-		"Aviano",
-		"Elfo",
-		"Meio-elfo",
-		"Humano",
-		"Pequenino",
-		"Rakashano",
-		"Sáurio",
-		"Celestial",
-		"Guardião"];
+	let chk = '';
+	var listaRacas = [];
 
+	chk = document.getElementById('racaAnao');
+	if (chk.checked) {listaRacas.push("Anão");}
+
+	chk = document.getElementById('racaAndroide');
+	if (chk.checked) {listaRacas.push("Androide");}
+
+	chk = document.getElementById('racaAquariano');
+	if (chk.checked) {listaRacas.push("Aquariano");}
+
+	chk = document.getElementById('racaAviano');
+	if (chk.checked) {listaRacas.push("Aviano");}
+
+	chk = document.getElementById('racaElfo');
+	if (chk.checked) {listaRacas.push("Elfo");}
+	
+	chk = document.getElementById('racaMeioElfo');
+	if (chk.checked) {listaRacas.push("Meio-elfo");}
+
+	chk = document.getElementById('racaHumano');
+	if (chk.checked) {listaRacas.push("Humano");}
+
+	chk = document.getElementById('racaPequenino');
+	if (chk.checked) {listaRacas.push("Pequenino");}
+
+	chk = document.getElementById('racaRakashano');
+	if (chk.checked) {listaRacas.push("Rakashano");}
+
+	chk = document.getElementById('racaSaurio');
+	if (chk.checked) {listaRacas.push("Sáurio");}
+
+	chk = document.getElementById('racaCelestial');
+	if (chk.checked) {listaRacas.push("Celestial");}
+
+	chk = document.getElementById('racaGuardiao');
+	if (chk.checked) {listaRacas.push("Guardião");}
 	
 	return listaRacas[randomAte(listaRacas.length)];
 	}
@@ -207,7 +231,7 @@ definirAtributos();
 				} else { menorAtributo = 'astucia'};
 
 
-		/*serão definidas de acordo com os atributos*/
+		/*serão definidas de acordo com os atributos
 		var periciasPrincipais=['atletismo','furtividade','persuadir','conGeral','perceber'];
 		var periciasSecundarias=['cavalgar','dirigir','navegar','pilotar','curar','sobrevivencia','intimidar','provocar','consertar','jogar','conBatalha'];
 
@@ -229,7 +253,8 @@ definirAtributos();
 				break;
 
 			default: console.log("Maior atributo inválido!");
-		}
+		}*/
+
 		var periciasMaisProvaveis=[];
 		function aumentarPericia(pericia){
 			if (pericia=='atirar') { if(personagem.atributos.agilidade>personagem.pericias.atirar){personagem.pericias.atirar++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.atirar++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
@@ -264,8 +289,14 @@ definirAtributos();
 			periciasMaisProvaveis.push(pericia);
 		}
 
-
+		let perChk = '';
 		var arrayPericias = Object.keys(personagem.pericias);
+
+		perChk = document.getElementById('perModernas');
+
+		/*retira da lista os 4 primeiros elementos*/
+		if (!perChk.checked) { arrayPericias.splice(0,4); };
+		console.log("pericias usadas:"+arrayPericias);
 
 		/*pericias basicas*/
 		aumentarPericia('atletismo');

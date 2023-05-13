@@ -34,12 +34,12 @@
 			<div id="botaoGerar">
 
 				 <div class="form-floating mb-4">
-				  <select class="form-select" id="selecCenario" aria-label="Floating label select">
-				    <option selected="" value="0">Geral</option>
-				    <option value="1" disabled>Fantasia Medieval</option>
-				    <option value="2" disabled>Moderno</option>
-				    <option value="3" disabled>Ficção Científica</option>
-				    <option value="4" disabled>Super heróis</option>
+				  <select class="form-select" id="selectCenario" aria-label="Floating label select">
+				    <option selected="" value="Geral">Geral</option>
+				    <option value="Fantasia Medieval" disabled>Fantasia Medieval</option>
+				    <option value="Moderno" disabled>Moderno</option>
+				    <option value="Scifi" disabled>Ficção Científica</option>
+				    <option value="Supers" disabled>Super heróis</option>
 				  </select>
 				  <label for="selecCenario">Selecione o cenário:</label>
 				</div>
@@ -56,6 +56,76 @@
 					</div>
 				</div>
 
+				<h6>Raças possíveis</h6>
+				<div class="container pb-5">
+					<div class="row">
+						<div class="col">
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaHumano" checked>
+							  <label class="form-check-label" for="racaHumano">Humano</label>
+							</div>
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaAnao">
+							  <label class="form-check-label" for="racaAnao">Anão</label>
+							</div>
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaAndroide">
+							  <label class="form-check-label" for="racaAndroide">Androide</label>
+							</div>
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaAquariano">
+							  <label class="form-check-label" for="racaAquariano">Aquariano</label>
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaAviano">
+							  <label class="form-check-label" for="racaAviano">Aviano</label>
+							</div>
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaElfo">
+							  <label class="form-check-label" for="racaElfo">Elfo</label>
+							</div>
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaMeioElfo">
+							  <label class="form-check-label" for="racaMeioElfo">Meio-Elfo</label>
+							</div>
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaPequenino">
+							  <label class="form-check-label" for="racaPequenino">Pequenino</label>
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaRakashano">
+							  <label class="form-check-label" for="racaRakashano">Rakashano</label>
+							</div>
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaSaurio">
+							  <label class="form-check-label" for="racaSaurio">Sáurio</label>
+							</div>
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaCelestial">
+							  <label class="form-check-label" for="racaCelestial">Celestial</label>
+							</div>
+							<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="racaGuardiao">
+							  <label class="form-check-label" for="racaGuardiao">Guardião</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h6>Perícias específicas</h6>
+				<div class="pb-5">
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" id="perModernas" checked>
+						<label class="form-check-label" for="perModernas">Dirigir, Pilotar, Eletrônica e Hackear.</label>
+					</div>
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" id="perArcanas" disabled>
+						<label class="form-check-label" for="perArcanas">Perícias de Antecedentes Arcanos</label>
+					</div>
+				</div>
 				<div class="form-floating mb-4">
 				  <select class="form-select" id="selecQtd" aria-label="Floating label select">
 				    <option selected="" value="1">1</option>
