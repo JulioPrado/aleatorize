@@ -443,9 +443,159 @@ definirPericias();
 
 definirComp()
 /************ VANTANGENS ***********************************/
+	function definirVantagens(){
+
+		var vantPossiveis = [];
+
+		/*vantagens sem requisitos*/
+		vantPossiveis.push(
+		"Aristocrata",
+		"Famoso",
+		"Furioso",
+		"Prontidão",
+		"Rico",
+		"Sorte",
+		"Noção do Perigo",
+		"Elo Animal",
+		"Ameaçador",
+		"Conexões"
+		);
+
+		/*requisitos de atributos*/
+		if (personagem.atributos.agilidade>=2) {
+			vantPossiveis.push("Ligeiro");
+		}
+		if (personagem.atributos.agilidade>=3) {
+			vantPossiveis.push(
+			"Ambidestro",
+			"Rápido",
+			"Atacar Primeiro",
+			"Atirar com Duas Armas",
+			"Corredor",
+			"Lutar com Duas Armas",
+			"Mãos Firmes",
+			"Retirada",
+			"Ás");
+		}
+
+		if (personagem.atributos.astucia>=2) {
+			vantPossiveis.push(
+			"Linguista",
+			"Comando",
+			"Manha");
+		}
+
+		if (personagem.atributos.astucia>=3) {
+			vantPossiveis.push("Calculista");
+		}
+		if (personagem.atributos.astucia>=4) {
+			vantPossiveis.push("Pau Pra Toda Obra");
+		}
+		if (personagem.atributos.espirito>=2) {
+			vantPossiveis.push("Corajoso");
+		}
+		if (personagem.atributos.espirito>=3) {
+			vantPossiveis.push(
+			"Carismático",
+			"Impulso",
+			"Resistência Arcana",
+			"Duro de Matar",
+			"Curandeiro",
+			"Senhor das Feras",
+			"Cativar o Ambiente",
+			"Confiável",
+			"Elevar o Moral",
+			"Elo Comum",
+			"Obstinado");
+		}
+		if (personagem.atributos.vigor>=2) {
+			vantPossiveis.push("Atraente");
+		}
+		if (personagem.atributos.vigor>=3) {
+			vantPossiveis.push(
+			"Cura Rápida",
+			"Nervos de Aço",
+			"Queixo de Ferro",
+			"Coragem Líquida");
+		}
+
+		/*requisitos de pericias*/
+		if (personagem.pericias.lutar>=2) {
+			vantPossiveis.push("Artista Marcial");
+		}
+		if (personagem.pericias.lutar>=3) {
+			vantPossiveis.push("Finta", "Golpe Poderoso");
+		}
+		if (personagem.pericias.pesquisar>=3) {
+			vantPossiveis.push("Erudito");
+		}
+		if (personagem.pericias.consertar>=3) {
+			vantPossiveis.push("Senhor Conserta Tudo");
+		}
+		if (personagem.pericias.provocar>=2) {
+			vantPossiveis.push("Provocador","Réplica");
+		}
+		if (personagem.pericias.provocar>=3) {
+			vantPossiveis.push("Humilhar");
+		}
+
+		if (personagem.pericias.atletismo>=3||personagem.pericias.atirar>=3) {
+			vantPossiveis.push("Tiro Mortal");
+		}
+
+		if (personagem.pericias.atletismo>=3||personagem.pericias.lutar>=3||personagem.pericias.atirar>=3) {
+			vantPossiveis.push("Arma Predileta");
+		}
+
+		if (personagem.atributos.astucia>=2&&personagem.pericias.consertar>=2&&personagem.pericias.perceber>=3) {
+			vantPossiveis.push("McGyver");
+		}
+
+		if (personagem.atributos.espirito>=2&&personagem.pericias.sobrevivencia>=3) {
+			vantPossiveis.push("Mateiro");
+		}
+
+		if (personagem.atributos.astucia>=3&&personagem.pericias.pesquisar>=3) {
+			vantPossiveis.push("Investigador");
+		}
+
+		if (personagem.atributos.agilidade>=3&&personagem.pericias.furtividade>=3&&personagem.pericias.lutar>=2) {
+			vantPossiveis.push("Assassino");
+		}
+
+		if (personagem.atributos.agilidade>=3&&personagem.pericias.furtividade>=2&&personagem.pericias.ladinagem>=2) {
+			vantPossiveis.push("Ladrão");
+		}
+
+		if (personagem.atributos.agilidade>=3&&personagem.pericias.atletismo>=3) {
+			vantPossiveis.push("Acrobata");
+		}
+
+		if (personagem.atributos.forca>=3&&personagem.pericias.lutar>=3) {
+			vantPossiveis.push("Varredura");
+		}
+
+		if (personagem.atributos.espirito>=3&&personagem.pericias.lutar>=2) {
+			vantPossiveis.push("Campeão");
+		}
+
+		if (personagem.atributos.forca>=2&&personagem.atributos.vigor>=2) {
+			vantPossiveis.push("Musculoso","Soldado");
+		}
+
+		if (personagem.atributos.forca>=3&&personagem.atributos.vigor>=3) {
+			vantPossiveis.push("Brigão");
+		}
 
 
 
+
+		/*padrão de 2 vantagens*/
+		colocarAleatNoArray(vantPossiveis,personagem.vantagens);
+		colocarAleatNoArray(vantPossiveis,personagem.vantagens);
+		if (personagem.raca=='Humano') {colocarAleatNoArray(vantPossiveis,personagem.vantagens);}
+}
+definirVantagens();
 /************ CARAC DERIVADAS / EQUIPAMENTOS ***********************************/
 	function definirDerivadas(){
 
@@ -592,6 +742,19 @@ definirComp()
 		 }
 		 personagem.complicacoesMe=stringAux;
 
+		 stringAux=''
+		 for (var i=0;i<personagem.vantagens.length;i++){
+			stringAux+=personagem.vantagens[i];
+			if (i==personagem.vantagens.length-1) {
+				stringAux+='.';
+			}else{
+				stringAux+=', ';
+			}
+		 }
+		 personagem.vantagens=stringAux;
+
+
+
 
 		 $ ('#ficha').append(
 		 "<div class='borda p-4 mt-3' id='ficha"+personagem.pos+"' class='fichaFinal'>	"
@@ -640,7 +803,7 @@ definirComp()
 		+" 	<span>"+personagem.complicacoesMe+"</span><br/>");}
 
 		$ ('#ficha'+personagem.pos).append(
-		" 	<strong>Vantagens:</strong> [Ainda em desenvolvimento]<br/><br/>"
+		" 	<strong>Vantagens:</strong> <span>"+personagem.vantagens+"</span><br/><br/>"
 		);
 		$ ('#ficha'+personagem.pos).append("<div id='boxPericias"+personagem.pos+"' class='alinhaDireita'></div>");
 		if (personagem.pericias.atirar) {$ ('#boxPericias'+personagem.pos).append("<span>Atirar : "+personagem.pericias.atirar+"</span> <br>")};
