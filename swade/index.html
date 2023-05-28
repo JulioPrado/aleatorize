@@ -11,7 +11,7 @@
 	  gtag('config', 'G-WBGR4EZD8H');
 	</script>
 	<meta charset="utf-8">
-	<title>Gerador Savage Worlds</title>
+	<title>Aleatorize.online - Gerador Savage Worlds</title>
 	<link rel="stylesheet" href="estilo.css">
 	<!--     BOOTSTRAP              -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -35,13 +35,11 @@
 
 				 <div class="form-floating mb-4">
 				  <select class="form-select" id="selectCenario" aria-label="Floating label select">
-				    <option selected="" value="Geral">Geral</option>
-				    <option value="Fantasia Medieval" disabled>Fantasia Medieval</option>
-				    <option value="Moderno" disabled>Moderno</option>
+				  	<option value="Moderno">Moderno</option>
+				    <option value="Fantasia Medieval">Fantasia Medieval</option>
 				    <option value="Scifi" disabled>Ficção Científica</option>
-				    <option value="Supers" disabled>Super heróis</option>
 				  </select>
-				  <label for="selecCenario">Selecione o cenário:</label>
+				  <label for="selecCenario">Tipo de cenário:</label>
 				</div>
 
 				<h6>Livros utilizados</h6>
@@ -115,15 +113,27 @@
 						</div>
 					</div>
 				</div>
-				<h6>Perícias específicas</h6>
+				<h6>Antecedentes Arcanos</h6>
 				<div class="pb-5">
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" id="perModernas" checked>
-						<label class="form-check-label" for="perModernas">Dirigir, Pilotar, Eletrônica e Hackear.</label>
+						<input class="form-check-input" type="checkbox" id="perFoco">
+						<label class="form-check-label" for="perFoco">Dom - Foco (Esp)</label>
 					</div>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" id="perArcanas" disabled>
-						<label class="form-check-label" for="perArcanas">Perícias de Antecedentes Arcanos</label>
+						<input class="form-check-input" type="checkbox" id="perConj">
+						<label class="form-check-label" for="perConj">Magia - Conjurar (Ast)</label>
+					</div>
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" id="perFe">
+						<label class="form-check-label" for="perFe">Milagres - Fé (Esp)</label>
+					</div>
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" id="perPsi">
+						<label class="form-check-label" for="perPsi">Psiônicos - Psiônicos (Ast)</label>
+					</div>
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" id="perCieEst">
+						<label class="form-check-label" for="perCieEst"> Ciência Estranha -  Ciência Estranha (Ast)</label>
 					</div>
 				</div>
 				<div class="form-floating mb-4">
@@ -142,23 +152,19 @@
 				  <label for="selecQtd">Selecione a quantidade:</label>
 				</div>
 
-
+				<div class="p-1">
+					<br>
+					<p>Personagens no estágio noviço, gerados com 4 pontos de complicação, 5 pontos de atributos e 12 ou 13 de perícias.
+					</p>
+					<p>Aplicar manualmente bônus e penalidades raciais, de complicações e vantagens.</p>
+				</div>
 
 				<button style="display: block; margin: 0 auto;" type="button" class="btn btn-lg btn-dark" onclick="pedirPersonagem();">
 					Gerar fichas
 				</button>
 				<br/>
 				<button style="display: block; margin: 0 auto;" type="button" class="btn btn-primary" onclick='window.print();'>Imprimir Fichas</button>
-				<div class="border p-4 m-4" style="color: Orange;">
-					<br>
-					<p>Fichas geradas com 4 pontos de complicação, 5 pontos de atributos e 12 ou 13 de perícias.
-					</p>
-					<br/>
-					<p>Ainda em desenvolvimento. Aplicar manualmente bônus e penalidades raciais, de complicações e vantagens.</p>
-					<p>
-						*Antecedentes arcanos serão implementados futuramente.
-					</p>
-				</div>
+				
 			</div>
 		</div>
 

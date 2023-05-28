@@ -92,6 +92,7 @@ function gerarPersonagem(pos){
 		'aparar':0,
 		'resistencia':0,
 		'vantagens':[],
+		'poderes':[],
 		'pericias':{
 			'dirigir':0,
 			'pilotar':0,
@@ -119,20 +120,24 @@ function gerarPersonagem(pos){
 			'perceber':0,
 			'pesquisar':0,
 			'provocar':0,
-			'sobrevivencia':0
-			/*
+			'sobrevivencia':0,
 			'foco':0,
 			'fe':0,
 			'conjurar':0,
 			'psionicos':0,
-			'cieEstranha':0*/
+			'cieEstranha':0
 			}
 	}
 
-
+	var qntVantagens=2;
 /*********** Definir Cenário **********/
 
 personagem.cenario = document.getElementById('selectCenario').value;
+
+if (personagem.cenario=="Fantasia Medieval") {
+
+}
+
 
 /************  RAÇAS *************************************/
 	function definirRaca(){
@@ -217,44 +222,6 @@ definirAtributos();
 		/*define quantos pontos de perícia serão gastos na ficha*/
 		const pontosPericia = 12;
 
-		/*define qual o maior e menor entre agilidade, astúcia e espirito*/
-		var maiorAtributo;
-		var menorAtributo;
-
-		if (personagem.atributos.agilidade>=personagem.atributos.astucia&&personagem.atributos.agilidade>=personagem.atributos.espirito){ maiorAtributo = 'agilidade'
-		}else if (personagem.atributos.astucia>=personagem.atributos.agilidade&&personagem.atributos.astucia>=personagem.atributos.espirito){ maiorAtributo = 'astucia'
-			}else{ maiorAtributo = 'espirito'};
-
-		
-		if (personagem.atributos.espirito<=personagem.atributos.agilidade&&personagem.atributos.espirito<=personagem.atributos.astucia){ menorAtributo = 'espirito'
-			}else if (personagem.atributos.agilidade<=personagem.atributos.astucia&&personagem.atributos.agilidade<=personagem.atributos.espirito){ menorAtributo = 'agilidade'
-				} else { menorAtributo = 'astucia'};
-
-
-		/*serão definidas de acordo com os atributos
-		var periciasPrincipais=['atletismo','furtividade','persuadir','conGeral','perceber'];
-		var periciasSecundarias=['cavalgar','dirigir','navegar','pilotar','curar','sobrevivencia','intimidar','provocar','consertar','jogar','conBatalha'];
-
-		switch(maiorAtributo){
-			case 'agilidade':
-					periciasSecundarias.push('ladinagem');
-					personagem.atributos.forca>1 ? periciasPrincipais.push('lutar') : periciasPrincipais.push('atirar');
-
-				break; 
-			case 'astucia':
-					periciasSecundarias.push('ciencia','conAcademico','pesquisar','idiomas','ocultismo','eletronica','hackear');
-					personagem.atributos.forca>1 ? periciasSecundarias.push('lutar') : periciasSecundarias.push('atirar');
-				break;
-
-			case 'espirito':
-					periciasSecundarias.push('performance');
-					personagem.atributos.forca>1 ? periciasSecundarias.push('lutar') : periciasSecundarias.push('atirar');
-
-				break;
-
-			default: console.log("Maior atributo inválido!");
-		}*/
-
 		var periciasMaisProvaveis=[];
 		function aumentarPericia(pericia){
 			if (pericia=='atirar') { if(personagem.atributos.agilidade>personagem.pericias.atirar){personagem.pericias.atirar++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.atirar++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
@@ -284,18 +251,45 @@ definirAtributos();
 			if (pericia=='pesquisar') { if(personagem.atributos.astucia>personagem.pericias.pesquisar){personagem.pericias.pesquisar++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.pesquisar++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
 			if (pericia=='provocar') { if(personagem.atributos.astucia>personagem.pericias.provocar){personagem.pericias.provocar++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.provocar++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
 			if (pericia=='sobrevivencia') { if(personagem.atributos.astucia>personagem.pericias.sobrevivencia){personagem.pericias.sobrevivencia++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.sobrevivencia++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
+			if (pericia=='foco') {if(!personagem.pericias.foco){qntVantagens--;personagem.vantagens.push("Antecedente Arcano (Dom)");} if(personagem.atributos.espirito>personagem.pericias.foco){personagem.pericias.foco++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.foco++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
+			if (pericia=='fe') {if(!personagem.pericias.fe){qntVantagens--; personagem.vantagens.push("Antecedente Arcano (Milagres)");} if(personagem.atributos.espirito>personagem.pericias.fe){personagem.pericias.fe++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.fe++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
+			if (pericia=='conjurar') {if(!personagem.pericias.conjurar){qntVantagens--; personagem.vantagens.push("Antecedente Arcano (Magia)");} if(personagem.atributos.astucia>personagem.pericias.conjurar){personagem.pericias.conjurar++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.conjurar++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
+			if (pericia=='psionicos') {if(!personagem.pericias.psionicos){qntVantagens--; personagem.vantagens.push("Antecedente Arcano (Psiônicos)");} if(personagem.atributos.astucia>personagem.pericias.psionicos){personagem.pericias.psionicos++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.psionicos++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
+			if (pericia=='cieEstranha') {if(!personagem.pericias.cieEstranha){qntVantagens--; personagem.vantagens.push("Antecedente Arcano (Ciênca Estranha)");} if(personagem.atributos.astucia>personagem.pericias.cieEstranha){personagem.pericias.cieEstranha++; console.log("Gastou 1 pontos de perícia para comprar "+pericia);}else{personagem.pericias.cieEstranha++; pontosGastar--; console.log("Gastou 2 pontos de perícia para comprar "+pericia)}}else
 			console.log("Pericia inválida!!");	
 
 			periciasMaisProvaveis.push(pericia);
 		}
 
-		let perChk = '';
 		var arrayPericias = Object.keys(personagem.pericias);
 
-		perChk = document.getElementById('perModernas');
+		/*retira da lista as pericias de cenario moderno*/
+		if (personagem.cenario=="Fantasia Medieval") { arrayPericias.splice(0,4); };
 
-		/*retira da lista os 4 primeiros elementos*/
-		if (!perChk.checked) { arrayPericias.splice(0,4); };
+		
+
+		/*retira da lista as 5 perícias arcanas*/
+		arrayPericias.pop();
+		arrayPericias.pop();
+		arrayPericias.pop();
+		arrayPericias.pop();
+		arrayPericias.pop();
+
+		perChk = document.getElementById('perFoco');
+		if (perChk.checked) {arrayPericias.push("foco");};
+
+		perChk = document.getElementById('perConj');
+		if (perChk.checked) {arrayPericias.push("conjurar");};
+		
+		perChk = document.getElementById('perFe');
+		if (perChk.checked) {arrayPericias.push("fe");};
+
+		perChk = document.getElementById('perPsi');
+		if (perChk.checked) {arrayPericias.push("psionicos");};
+			
+		perChk = document.getElementById('perCieEst');
+		if (perChk.checked) {arrayPericias.push("cieEstranha");};
+			
 		console.log("pericias usadas:"+arrayPericias);
 
 		/*pericias basicas*/
@@ -322,6 +316,16 @@ definirAtributos();
 
 
 		 	aumentarPericia(pericia);
+
+		 	if (pericia=='foco'||pericia=='fe'||pericia=='cieEstranha'||pericia=='conjurar'||pericia=='psionicos') {
+		 		arrayPericias.pop();
+		 		arrayPericias.pop();
+		 		arrayPericias.pop();
+		 		arrayPericias.pop();
+		 		arrayPericias.pop();
+		 		/*para retirar as perícias arcanas da lista de pericias, após uma ja ser atribuida, e coloca novamente a escolhida*/
+		 		arrayPericias.push(pericia);
+		 	}
 		}
 
 	}
@@ -587,13 +591,12 @@ definirComp()
 			vantPossiveis.push("Brigão");
 		}
 
+		if (personagem.raca=='Humano') { qntVantagens++; }
 
 
-
-		/*padrão de 2 vantagens*/
-		colocarAleatNoArray(vantPossiveis,personagem.vantagens);
-		colocarAleatNoArray(vantPossiveis,personagem.vantagens);
-		if (personagem.raca=='Humano') {colocarAleatNoArray(vantPossiveis,personagem.vantagens);}
+		for(let i=1;i<=qntVantagens; i++){
+			colocarAleatNoArray(vantPossiveis,personagem.vantagens);
+		}
 }
 definirVantagens();
 /************ CARAC DERIVADAS / EQUIPAMENTOS ***********************************/
@@ -628,29 +631,82 @@ definirVantagens();
 	 	 case 1:
 	 	 	personagem.resistencia=personagem.resistencia+1+"(1)";
 	 	 	personagem.armadura="Considere uma armadura/vestimenta que protege +1";
-	 	 	personagem.arma="Arma c/c com dano For+D4 <br/>e/ou Faca/Adaga de arremesso 03/06/12 For+D4";
+	 	 	personagem.arma="Arma c/c com dano For+D4 <br/>";
+	 	 	if (personagem.pericias.atirar) { personagem.arma=personagem.arma+"e/ou Faca/Adaga de arremesso 03/06/12 For+D4";}
 	 	 	break
 	 	 case 2:
 	 	 	personagem.resistencia=personagem.resistencia+2+"(2)";
-	 	 	personagem.armadura="Considere uma armadura/vestimenta que protege +2"
-	 	 	personagem.arma="Arma c/c com dano For+D6 <br/>e/ou arma de ataque a distância com dano 2D6";
+	 	 	personagem.armadura="Considere uma armadura/vestimenta que protege +2";
+	 	 	personagem.arma="Arma c/c com dano For+D6 <br/>";
+	 	 	if (personagem.pericias.atirar) { personagem.arma=personagem.arma+"e/ou arma de ataque a distância com dano 2D6"};
 	 	 	break;
 	 	 case 3:
 	 	 	personagem.resistencia=personagem.resistencia+3+"(3)";
-	 	 	personagem.armadura="Considere uma armadura/vestimenta que protege +3"
-	 	 	personagem.arma="Arma c/c com dano máximo de For+D8 <br/>e/ou arma de ataque a distância com dano 2D8";
+	 	 	personagem.armadura="Considere uma armadura/vestimenta que protege +3";
+	 	 	personagem.arma="Arma c/c com dano máximo de For+D8 <br/>"
+	 	 	if (personagem.pericias.atirar) { personagem.arma=personagem.arma+"e/ou arma de ataque a distância com dano 2D8"};
 	 	 	break;
 
 	 	 /*se for 4 ou 5*/	
 	 	 default:
 	 	 	personagem.resistencia=personagem.resistencia+3+"(3)";
-	 	 	personagem.armadura="Considere uma armadura/vestimenta que protege +3"
-	 	 	personagem.arma="Arma c/c com dano máximo de For+D10 <br/>e/ou arma de ataque a distância com dano 2D8";
+	 	 	personagem.armadura="Considere uma armadura/vestimenta que protege +3";
+	 	 	personagem.arma="Arma c/c com dano máximo de For+D10 <br/>"
+	 	 	if (personagem.pericias.atirar) { personagem.arma=personagem.arma+"e/ou arma de ataque a distância com dano 2D8"};
 	 	 }
 	}
 
 
  definirDerivadas();
+
+ /************* PODERES ******************************/
+
+var listaPoderes = [];
+
+listaPoderes.push(
+	"Ajuda",
+	"Amigo das Feras",
+	"Andar Nas Paredes",
+	"Atordoar",
+	"Aumentar/Reduzir Característica",
+	"Cavar",
+	"Cegar",
+	"Confusão",
+	"Conjurar Aliado",
+	"Cura",
+	"Deflexão",
+	"Detectar/Ocultar Arcano",
+	"Devastação",
+	"Elo Mental",
+	"Empatia",
+	"Enredar",
+	"Falar Idioma",
+	"Ferir",
+	"Iluminar/Obscurecer",
+	"Ilusão",
+	"Leitura Mental",
+	"Manipulação Elemental",
+	"Medo",
+	"Mudança de Forma",
+	"Proteção",
+	"Proteção Ambiental",
+	"Proteção Arcana",
+	"Raio",
+	"Rajada",
+	"Som/Silêncio",
+	"Visão Sombria"
+	);
+
+	if (personagem.pericias.foco) {
+			colocarAleatNoArray(listaPoderes,personagem.poderes);
+		}else if (personagem.pericias.cieEstranha) {
+			colocarAleatNoArray(listaPoderes,personagem.poderes);
+			colocarAleatNoArray(listaPoderes,personagem.poderes);
+			}else if (personagem.pericias.conjurar||personagem.pericias.fe||personagem.pericias.psionicos) {
+				colocarAleatNoArray(listaPoderes,personagem.poderes);
+				colocarAleatNoArray(listaPoderes,personagem.poderes);
+				colocarAleatNoArray(listaPoderes,personagem.poderes);
+				};
 
 /************* Inserir na DIV ******************************/
 
@@ -716,6 +772,11 @@ definirVantagens();
 		 if(personagem.pericias.pesquisar){personagem.pericias.pesquisar = colocarDados(personagem.pericias.pesquisar);}
 		 if(personagem.pericias.provocar){personagem.pericias.provocar = colocarDados(personagem.pericias.provocar);}
 		 if(personagem.pericias.sobrevivencia){personagem.pericias.sobrevivencia= colocarDados(personagem.pericias.sobrevivencia);}
+		 if(personagem.pericias.foco){personagem.pericias.foco= colocarDados(personagem.pericias.foco);}
+		 if(personagem.pericias.fe){personagem.pericias.fe= colocarDados(personagem.pericias.fe);}
+		 if(personagem.pericias.conjurar){personagem.pericias.conjurar= colocarDados(personagem.pericias.conjurar);}
+		 if(personagem.pericias.psionicos){personagem.pericias.psionicos= colocarDados(personagem.pericias.psionicos);}
+		 if(personagem.pericias.cieEstranha){personagem.pericias.cieEstranha= colocarDados(personagem.pericias.cieEstranha);}
 
 
 
@@ -753,6 +814,16 @@ definirVantagens();
 		 }
 		 personagem.vantagens=stringAux;
 
+		 stringAux=''
+		 for (var i=0;i<personagem.poderes.length;i++){
+			stringAux+=personagem.poderes[i];
+			if (i==personagem.poderes.length-1) {
+				stringAux+='.';
+			}else{
+				stringAux+=', ';
+			}
+		 }
+		 personagem.poderes=stringAux;
 
 
 
@@ -806,13 +877,18 @@ definirVantagens();
 		" 	<strong>Vantagens:</strong> <span>"+personagem.vantagens+"</span><br/><br/>"
 		);
 		$ ('#ficha'+personagem.pos).append("<div id='boxPericias"+personagem.pos+"' class='alinhaDireita'></div>");
+		if (personagem.pericias.foco) {$ ('#boxPericias'+personagem.pos).append("<span>Foco : "+personagem.pericias.foco+"</span> <br>")};
+		if (personagem.pericias.fe) {$ ('#boxPericias'+personagem.pos).append("<span>Fé : "+personagem.pericias.fe+"</span> <br>")};
+		if (personagem.pericias.conjurar) {$ ('#boxPericias'+personagem.pos).append("<span>Conjurar : "+personagem.pericias.conjurar+"</span> <br>")};
+		if (personagem.pericias.psionicos) {$ ('#boxPericias'+personagem.pos).append("<span>Psiônicos : "+personagem.pericias.psionicos+"</span> <br>")};
+		if (personagem.pericias.cieEstranha) {$ ('#boxPericias'+personagem.pos).append("<span>Ciência Estranha : "+personagem.pericias.cieEstranha+"</span> <br>")};
 		if (personagem.pericias.atirar) {$ ('#boxPericias'+personagem.pos).append("<span>Atirar : "+personagem.pericias.atirar+"</span> <br>")};
+		if (personagem.pericias.lutar) {$ ('#boxPericias'+personagem.pos).append("<span>Lutar : "+personagem.pericias.lutar+"</span> <br>")};
 		if (personagem.pericias.atletismo) {$ ('#boxPericias'+personagem.pos).append("<span>Atletismo : "+personagem.pericias.atletismo+"</span> <br>")};
 		if (personagem.pericias.cavalgar) {$ ('#boxPericias'+personagem.pos).append("<span>Cavalgar : "+personagem.pericias.cavalgar+"</span> <br>")};
 		if (personagem.pericias.dirigir) {$ ('#boxPericias'+personagem.pos).append("<span>Dirigir : "+personagem.pericias.dirigir+"</span> <br>")};
 		if (personagem.pericias.furtividade) {$ ('#boxPericias'+personagem.pos).append("<span>Furtividade :"+personagem.pericias.furtividade+"</span> <br>")};
 		if (personagem.pericias.ladinagem) {$ ('#boxPericias'+personagem.pos).append("<span>Ladinagem : "+personagem.pericias.ladinagem+"</span> <br>")};
-		if (personagem.pericias.lutar) {$ ('#boxPericias'+personagem.pos).append("<span>Lutar : "+personagem.pericias.lutar+"</span> <br>")};
 		if (personagem.pericias.navegar) {$ ('#boxPericias'+personagem.pos).append("<span>Navegar : "+personagem.pericias.navegar+"</span> <br>")};
 		if (personagem.pericias.pilotar) {$ ('#boxPericias'+personagem.pos).append("<span>Pilotar : "+personagem.pericias.pilotar+"</span> <br>")};
 		if (personagem.pericias.intimidar) {$ ('#boxPericias'+personagem.pos).append("<span>Intimidar : "+personagem.pericias.intimidar+"</span> <br>")};
@@ -837,10 +913,11 @@ definirVantagens();
 		$ ('#ficha'+personagem.pos).append(
 		" <br/>"
 		+" 	<strong>Equipamentos:</strong> <br/>"+personagem.armadura
-		+" 	<br/>"
-		+" 	<strong>Armas e Poderes:</strong><br/>"+personagem.arma
-		+" 	<br/>"
+		+" 	<br/>"+personagem.arma
+		+" 	<div id='boxPoderes"+personagem.pos+"'></div>"
 		);
+
+		if (personagem.poderes) {$ ('#boxPoderes'+personagem.pos).append("<strong>Poderes:</strong><br/>"+personagem.poderes)};
 	}
 	adicionaFicha(personagem);
 }
