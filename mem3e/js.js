@@ -263,6 +263,7 @@ function gerarHeroi(){
 			{'descritor': 'Ar', 'nome':'Vento Sussurante', 'grad':0, 'descricao':'Comunicação (Auditivo, Ar), Sutil 1'},
 			//Continuar daqui
 			{'descritor': 'Armadura', 'nome':'Arma de Captura', 'grad':0, 'descricao':'Aflição à Distância (Resistido e Sobrepujado por Fortitude; Prejudicado, Desabilitado, Incapacitado)'}
+			
 
 
 			);

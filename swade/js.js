@@ -916,9 +916,7 @@ listaPoderes.push(
 		+" 	<br/>"+personagem.arma
 		+" 	<div id='boxPoderes"+personagem.pos+"'></div>"
 		);
-
-		if (personagem.poderes) {$ ('#boxPoderes'+personagem.pos).append("<strong>Poderes:</strong><br/>"+personagem.poderes)};
+		if (personagem.poderes) {$('#boxPoderes'+personagem.pos).append("<strong>Poderes:</strong><br/>"+personagem.poderes)};
 	}
 	adicionaFicha(personagem);
 }
-
