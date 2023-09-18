@@ -389,7 +389,7 @@ function pessoa(){
 
 		default: console.log('Cenário inválido.');
 	}
-	escreverLog("<span style='font-weight: bolder'>Pessoa: </span>"+arrayAux[randomEntre(0,arrayAux.length-1)]);
+	escreverLog("<span style='font-weight: bolder'>Alguém: </span>"+arrayAux[randomEntre(0,arrayAux.length-1)]);
 }
 
 function objeto(){
@@ -426,7 +426,7 @@ function tema(){
 }
 
 function nomeAtual(){
-	escreverLog("<span style='font-weight: bolder'>Nome atual: </span>"+listaNome[randomEntre(0,listaNome.length-1)]+' '+listaSobrenome[randomEntre(0,listaSobrenome.length-1)]);
+	escreverLog("<span style='font-weight: bolder'>Nome moderno: </span>"+listaNome[randomEntre(0,listaNome.length-1)]+' '+listaSobrenome[randomEntre(0,listaSobrenome.length-1)]);
 }
 
 function acaoCombate(){
@@ -449,6 +449,33 @@ function ferimento(){
 	escreverLog("<span style='font-weight: bolder'>Ferimento: </span>"+listaFerimento[randomEntre(0,listaFerimento.length-1)]);
 }
 
+function acaoPDJ(){
+	let acaopdj;
+
+	let listaExplorar=['local atual','pontos de interesse nas redondezas','social - conhecer pessoas'];
+	let listaRecursos=['financeiros - ir atrás de dinheiro/ouro/etc','equipamentos - gerenciar equipamentos, consumíveis, munições, etc'];
+	let listaInterpret=['história pessoal','interesses e Hobbies pessoais','geografia e locais de interesse','história do mundo','romance','política','religião','Arte e cultura'];
+
+	switch(randomAte(2)){
+
+		case 0:
+			acaopdj='(Explorar) ';
+			escreverLog("<span style='font-weight: bolder'>Ação PDJ: </span>"+acaopdj+listaExplorar[randomAte(listaExplorar.length-1)]);
+			break;
+
+		case 1:
+			acaopdj='(Recursos) ';
+			escreverLog("<span style='font-weight: bolder'>Ação PDJ: </span>"+acaopdj+listaRecursos[randomAte(listaRecursos.length-1)]);
+
+			break;
+		case 2:
+			acaopdj='(Interpretação) ';
+			escreverLog("<span style='font-weight: bolder'>Ação PDJ: </span>"+acaopdj+listaInterpret[randomAte(listaInterpret.length-1)]);
+
+			break;
+		default: console.log("Ação PDJ inválida!!!!!");
+		}
+}
 
 
 function nomeFantasia(){
@@ -557,8 +584,6 @@ function desejosObjetivos(){
 
 	escreverLog("<span style='font-weight: bolder'>Desejo/Objetivo do PDM: </span>"+desejo);
 }
-
-
 
 /*** Ação ****************************************************************/
 var listaacao=
