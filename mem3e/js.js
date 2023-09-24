@@ -111,7 +111,7 @@ function gerarHeroi(){
 	 	}
 
 	 	for (var i = 0; i<heroi.poderes.length; i++) {
-	 		$ ('#fichaPoderes').append('('+heroi.poderes[i].descritor+') <b>'+heroi.poderes[i].nome+'</b> '+heroi.poderes[i].grad+' (<small>'+heroi.poderes[i].descricao+'</small>)');
+	 		$ ('#fichaPoderes').append('('+heroi.poderes[i].descritor+') <b>'+heroi.poderes[i].nome+'</b>:'+heroi.poderes[i].grad+' <small>'+heroi.poderes[i].descricao+'</small>');
 	 		/*if (heroi.poderes[i].alcance=='Perto'){
 	 			document.getElementById('cacPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad+' ');
 	 		} else if(heroi.poderes[i].alcance=='À Distância'){
