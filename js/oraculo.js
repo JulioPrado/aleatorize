@@ -456,9 +456,19 @@ function acaoPDJ(){
 	let listaRecursos=['financeiros - ir atrás de dinheiro/ouro/etc','equipamentos - gerenciar equipamentos, consumíveis, munições, etc'];
 	let listaInterpret=['história pessoal','interesses e Hobbies pessoais','geografia e locais de interesse','história do mundo','romance','política','religião','Arte e cultura'];
 
-	switch(randomAte(2)){
+	switch(randomAte(4)){
 
-		case 0:
+		case 4:
+			acaopdj='(Objetivo Maior) ';
+			escreverLog("<span style='font-weight: bolder'>Ação PDJ: </span>"+acaopdj+'Continuar na busca do objetivo maior');
+			break;
+
+		case 3:
+			acaopdj='(Objetivo Menor) ';
+			escreverLog("<span style='font-weight: bolder'>Ação PDJ: </span>"+acaopdj+'Encontrar ou continuar na busca de um objetivo menor');
+			break;
+
+		case 2:
 			acaopdj='(Explorar) ';
 			escreverLog("<span style='font-weight: bolder'>Ação PDJ: </span>"+acaopdj+listaExplorar[randomAte(listaExplorar.length-1)]);
 			break;
@@ -468,7 +478,7 @@ function acaoPDJ(){
 			escreverLog("<span style='font-weight: bolder'>Ação PDJ: </span>"+acaopdj+listaRecursos[randomAte(listaRecursos.length-1)]);
 
 			break;
-		case 2:
+		case 0:
 			acaopdj='(Interpretação) ';
 			escreverLog("<span style='font-weight: bolder'>Ação PDJ: </span>"+acaopdj+listaInterpret[randomAte(listaInterpret.length-1)]);
 
