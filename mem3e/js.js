@@ -541,7 +541,7 @@ function gerarHeroi(){
 			{'descritor': 'Luz', 'nome':'Estroboscópio Hipnótico', 'grad':0, 'descricao':'Aflição em Árera (Percepção) (Resistido e Sobrepujado por Vontade; Em Transe, Compelido), Grau Limitado, Dependente da Visão'},
 			{'descritor': 'Luz', 'nome':'Explosão Deslumbrante', 'grad':0, 'descricao':'Aflição Cumulativa, Explosão (Área); (Resistida por Esquiva, Sobrepujada por Fortitude; Tonto, Atordoado, Incapacitado), Dependente da Visão'},
 			{'descritor': 'Luz', 'nome':'Raio Laser', 'grad':0, 'descricao':'Dano à Distância (Laser)'},
-			{'descritor': 'Luz', 'nome':'Pulso de Laser', 'grad':0, 'descricao':'Dano à Distância Multiataque (Laser'},
+			{'descritor': 'Luz', 'nome':'Pulso de Laser', 'grad':0, 'descricao':'Dano à Distância Multiataque (Laser)'},
 			{'descritor': 'Luz', 'nome':'Explosão Laser', 'grad':0, 'descricao':'Dano em Área (Explosão) (Laser)'},
 			{'descritor': 'Luz', 'nome':'Raio Laser Invisível', 'grad':0, 'descricao':'Dano à Distância (Laser), Sutil'},
 			{'descritor': 'Luz', 'nome':'Mira Laser', 'grad':0, 'descricao':'Adicione Precisão a qualquer poder Laser'},
