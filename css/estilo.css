@@ -7,6 +7,10 @@ html{
 	scroll-behavior: smooth;
 }
 
+a, a:hover{
+	text-decoration: none;
+}
+
 .centro{
 	margin: 0 auto;
 }
@@ -39,7 +43,6 @@ div#social-icon a{
 
 div#social-icon a:hover{
 	color: red;
-	text-decoration: none;
 }
 
 footer{
@@ -71,9 +74,6 @@ nav ul li a.nav-link{
 	color: black;
 }
 
-nav ul li.nav-item:hover{
-	text-decoration: underline;
-}
 
 /* Cards geradores *******************************/
 
@@ -215,14 +215,16 @@ div#log.imprimir{
 	div.boxPrincipal{
 	padding-bottom: 20px;
 	}
+
+	nav ul li{
+	padding-left: 10px;
 	
-	.menu-link {
-	font-size: .8em;
 	}
 
-	.so-desktop{
-		display: none;
+	nav ul li a.nav-link{
+	font-size: 0.8em;
 	}
+	
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {

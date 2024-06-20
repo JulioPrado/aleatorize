@@ -47,33 +47,10 @@ div#tela{
 	padding-bottom: 40px;
 }
 
-#nomeRodape{
-	float: right;
-}
-
 /* Imagens -------------------------------*/
 .imgrepresent{
  width: 80%;
  margin-top:20px;
-}
-
-
-footer{
-	width: 100%;
-	color: #E4E4E4;
-	background-color: #140D0D;
-	position: fixed;
-    bottom:0;
-	padding: 10px;
-}
-
-footer a{
-	text-decoration: none;
-	color: #98c6d9;
-}
-
-footer a:hover{
-	color: gray;
 }
 
 /*
@@ -152,16 +129,7 @@ div#humano, div#infectado{
   .imgrepresent{
  	width: 100%;
  }
-
-  #editoraRodape{
-  	display: none;
-  }
-
-  #nomeRodape{
-  	float: none;
-  	display: block;
-  	text-align: center;
-  }
+ 
 
   img#logo{
   	width: 100%;
